@@ -573,9 +573,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3416094450094279370, guid: 099255a47179ed847999f33cb5088362, type: 3}
+      propertyPath: jumpForce
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416094450094279370, guid: 099255a47179ed847999f33cb5088362, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416094450094279370, guid: 099255a47179ed847999f33cb5088362, type: 3}
+      propertyPath: jumpHoldForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416094450094279370, guid: 099255a47179ed847999f33cb5088362, type: 3}
+      propertyPath: maxJumpHoldTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416094450094279370, guid: 099255a47179ed847999f33cb5088362, type: 3}
+      propertyPath: lowJumpMultiplier
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6738072835926599986, guid: 099255a47179ed847999f33cb5088362, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970834494311670458, guid: 099255a47179ed847999f33cb5088362, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970834494311670458, guid: 099255a47179ed847999f33cb5088362, type: 3}
+      propertyPath: m_GravityScale
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
