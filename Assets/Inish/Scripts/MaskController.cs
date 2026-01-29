@@ -1,4 +1,4 @@
-using System;          // REQUIRED for Action
+using System;
 using UnityEngine;
 
 public enum MaskState
@@ -11,9 +11,8 @@ public class MaskController : MonoBehaviour
 {
     public static MaskController Instance;
 
-    [Header("Cameras")]
-    public Camera PhysicalCamera;
-    public Camera SpiritCamera;
+    [Header("Camera")]
+    public Camera mainCamera;
 
     public MaskState CurrentState { get; private set; }
 
@@ -34,7 +33,6 @@ public class MaskController : MonoBehaviour
 
     void Update()
     {
-        // Free toggle input
         if (Input.GetKeyDown(KeyCode.Q))
         {
             ToggleMask();
@@ -43,18 +41,25 @@ public class MaskController : MonoBehaviour
 
     public void ToggleMask()
     {
-        if (CurrentState == MaskState.Physical)
-            SetState(MaskState.Spirit);
-        else
-            SetState(MaskState.Physical);
+        SetState(CurrentState == MaskState.Physical
+            ? MaskState.Spirit
+            : MaskState.Physical);
     }
 
     public void SetState(MaskState newState)
     {
         CurrentState = newState;
 
-        PhysicalCamera.enabled = (newState == MaskState.Physical);
-        SpiritCamera.enabled   = (newState == MaskState.Spirit);
+        if (newState == MaskState.Physical)
+        {
+            mainCamera.cullingMask =
+                LayerMask.GetMask("Player", "Environment");
+        }
+        else
+        {
+            mainCamera.cullingMask =
+                LayerMask.GetMask("Player", "Enemies");
+        }
 
         OnMaskStateChanged?.Invoke(newState);
     }
