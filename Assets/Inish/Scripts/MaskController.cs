@@ -14,6 +14,10 @@ public class MaskController : MonoBehaviour
     [Header("Camera")]
     public Camera mainCamera;
 
+    [Header("Camera Effects")]
+    public CameraShake cameraShake;
+
+
     public MaskState CurrentState { get; private set; }
 
     public event Action<MaskState> OnMaskStateChanged;
@@ -61,6 +65,8 @@ public class MaskController : MonoBehaviour
                 LayerMask.GetMask("Player", "Enemies");
         }
 
+        cameraShake?.Shake();
         OnMaskStateChanged?.Invoke(newState);
     }
+
 }
