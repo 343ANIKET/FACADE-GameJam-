@@ -9,12 +9,18 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Environment
   - Water
   - UI
+<<<<<<< HEAD
   - Environment
   - 
   - 
+=======
+  - Ground
+  - Player
+  - Enemies
+>>>>>>> 50cf47898bc838f60d757b7f16518b6ea61f753c
   - 
   - 
   - 
