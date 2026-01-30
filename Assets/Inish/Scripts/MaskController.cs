@@ -16,6 +16,7 @@ public class MaskController : MonoBehaviour
 
     [Header("Camera Effects")]
     public CameraShake cameraShake;
+    
 
 
     public MaskState CurrentState { get; private set; }
@@ -66,7 +67,11 @@ public class MaskController : MonoBehaviour
         }
 
         cameraShake?.Shake();
-        OnMaskStateChanged?.Invoke(newState);
-    }
+
+        if (newState == MaskState.Spirit)
+            cameraShake?.ZoomToSpirit();
+        else
+            cameraShake?.ZoomToPhysical();
+            }
 
 }

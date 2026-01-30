@@ -1,0 +1,806 @@
+fileFormatVersion: 2
+guid: 1e3c19b7bc22fd449b81590644e57f52
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4248123763489180711
+    second: Falling-SpriteSheet_0
+  - first:
+      213: 3246003731730812754
+    second: Falling-SpriteSheet_1
+  - first:
+      213: 6655274307329737318
+    second: Falling-SpriteSheet_2
+  - first:
+      213: 3816001854927747372
+    second: Falling-SpriteSheet_3
+  - first:
+      213: -3692187934100862408
+    second: Falling-SpriteSheet_4
+  - first:
+      213: -1146459172849830590
+    second: Falling-SpriteSheet_5
+  - first:
+      213: -4552533884246993993
+    second: Falling-SpriteSheet_6
+  - first:
+      213: -5088782981600909084
+    second: Falling-SpriteSheet_7
+  - first:
+      213: 4321434052110201287
+    second: Falling-SpriteSheet_8
+  - first:
+      213: -3350250189342878367
+    second: Falling-SpriteSheet_9
+  - first:
+      213: -525917273610879957
+    second: Falling-SpriteSheet_10
+  - first:
+      213: -7416275001502319268
+    second: Falling-SpriteSheet_11
+  - first:
+      213: 7411173408203516315
+    second: Falling-SpriteSheet_12
+  - first:
+      213: -3172583385920682224
+    second: Falling-SpriteSheet_13
+  - first:
+      213: 8898334151304339183
+    second: Falling-SpriteSheet_14
+  - first:
+      213: 635557203857072648
+    second: Falling-SpriteSheet_15
+  - first:
+      213: 1275213993149351094
+    second: Falling-SpriteSheet_16
+  - first:
+      213: -5161988222989232307
+    second: Falling-SpriteSheet_17
+  - first:
+      213: -760810187567996780
+    second: Falling-SpriteSheet_18
+  - first:
+      213: 7222190339367977758
+    second: Falling-SpriteSheet_19
+  - first:
+      213: -6598648390190778423
+    second: Falling-SpriteSheet_20
+  - first:
+      213: -2910117606931372229
+    second: Falling-SpriteSheet_21
+  - first:
+      213: -5338243668421912976
+    second: Falling-SpriteSheet_22
+  - first:
+      213: -1647351739867679125
+    second: Falling-SpriteSheet_23
+  - first:
+      213: -999441461586913768
+    second: Falling-SpriteSheet_24
+  - first:
+      213: -5968377637773289986
+    second: Falling-SpriteSheet_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 250
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 51
+        width: 292
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72c0bac2e0e54fa30800000000000000
+      internalID: 4248123763489180711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 51
+        width: 290
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25f4869223f1c0d20800000000000000
+      internalID: 3246003731730812754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 51
+        width: 289
+        height: 424
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6624c2ba8b84c5c50800000000000000
+      internalID: 6655274307329737318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 52
+        width: 287
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c293331187925f430800000000000000
+      internalID: 3816001854927747372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 52
+        width: 286
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83a4fefc2a6b2ccc0800000000000000
+      internalID: -3692187934100862408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 2738
+        y: 52
+        width: 286
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2453cccd475f610f0800000000000000
+      internalID: -1146459172849830590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 3252
+        y: 52
+        width: 287
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b357897d8622d0c0800000000000000
+      internalID: -4552533884246993993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 3766
+        y: 53
+        width: 288
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e8ef9af6d20169b0800000000000000
+      internalID: -5088782981600909084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 4280
+        y: 53
+        width: 289
+        height: 435
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c13e4cdf51d8fb30800000000000000
+      internalID: 4321434052110201287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 4794
+        y: 53
+        width: 290
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 165588304358181d0800000000000000
+      internalID: -3350250189342878367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 5308
+        y: 53
+        width: 292
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2c7e2da60193b8f0800000000000000
+      internalID: -525917273610879957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 5822
+        y: 53
+        width: 293
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5d38d2ed29141990800000000000000
+      internalID: -7416275001502319268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 6336
+        y: 53
+        width: 294
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b99aaccd2f6c9d660800000000000000
+      internalID: 7411173408203516315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 6850
+        y: 53
+        width: 296
+        height: 437
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01744e53838b8f3d0800000000000000
+      internalID: -3172583385920682224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 7364
+        y: 52
+        width: 297
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feed835e3cb3d7b70800000000000000
+      internalID: 8898334151304339183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 7878
+        y: 52
+        width: 297
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 802675ad8e3f1d800800000000000000
+      internalID: 635557203857072648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 8392
+        y: 52
+        width: 298
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b44642de5872b110800000000000000
+      internalID: 1275213993149351094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 8906
+        y: 51
+        width: 297
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d471af18f0fec58b0800000000000000
+      internalID: -5161988222989232307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 9420
+        y: 51
+        width: 296
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 490e2845a2f0175f0800000000000000
+      internalID: -760810187567996780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 9934
+        y: 51
+        width: 295
+        height: 426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e13494e49df5a3460800000000000000
+      internalID: 7222190339367977758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 10447
+        y: 51
+        width: 294
+        height: 424
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c7b9f01044ec64a0800000000000000
+      internalID: -6598648390190778423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 10961
+        y: 51
+        width: 292
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b37ee38747f2d97d0800000000000000
+      internalID: -2910117606931372229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 11475
+        y: 51
+        width: 292
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 076db33baafbae5b0800000000000000
+      internalID: -5338243668421912976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 11989
+        y: 51
+        width: 292
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b66b015125e6329e0800000000000000
+      internalID: -1647351739867679125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 12503
+        y: 51
+        width: 292
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 816905439454122f0800000000000000
+      internalID: -999441461586913768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Falling-SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 13017
+        y: 51
+        width: 292
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef5532709201c2da0800000000000000
+      internalID: -5968377637773289986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Falling-SpriteSheet_0: 4248123763489180711
+      Falling-SpriteSheet_1: 3246003731730812754
+      Falling-SpriteSheet_10: -525917273610879957
+      Falling-SpriteSheet_11: -7416275001502319268
+      Falling-SpriteSheet_12: 7411173408203516315
+      Falling-SpriteSheet_13: -3172583385920682224
+      Falling-SpriteSheet_14: 8898334151304339183
+      Falling-SpriteSheet_15: 635557203857072648
+      Falling-SpriteSheet_16: 1275213993149351094
+      Falling-SpriteSheet_17: -5161988222989232307
+      Falling-SpriteSheet_18: -760810187567996780
+      Falling-SpriteSheet_19: 7222190339367977758
+      Falling-SpriteSheet_2: 6655274307329737318
+      Falling-SpriteSheet_20: -6598648390190778423
+      Falling-SpriteSheet_21: -2910117606931372229
+      Falling-SpriteSheet_22: -5338243668421912976
+      Falling-SpriteSheet_23: -1647351739867679125
+      Falling-SpriteSheet_24: -999441461586913768
+      Falling-SpriteSheet_25: -5968377637773289986
+      Falling-SpriteSheet_3: 3816001854927747372
+      Falling-SpriteSheet_4: -3692187934100862408
+      Falling-SpriteSheet_5: -1146459172849830590
+      Falling-SpriteSheet_6: -4552533884246993993
+      Falling-SpriteSheet_7: -5088782981600909084
+      Falling-SpriteSheet_8: 4321434052110201287
+      Falling-SpriteSheet_9: -3350250189342878367
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

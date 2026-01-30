@@ -3,28 +3,29 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed = 6f;
+    public float walkSpeed = 6f;
+    public float runSpeed = 10f;
 
     [Header("Jump")]
-    public float jumpForce = 9f;          // Strong take-off
-    public float jumpHoldForce = 6f;       // Extra height when held
-    public float maxJumpHoldTime = 0.15f;  // SHORT = fast jump
+    public float jumpForce = 9f;
+    public float jumpHoldForce = 6f;
+    public float maxJumpHoldTime = 0.15f;
 
     [Header("Gravity")]
-    public float fallMultiplier = 4f;      // Fast fall
-    public float lowJumpMultiplier = 3f;   // Small jump when tapped
+    public float fallMultiplier = 4f;
+    public float lowJumpMultiplier = 3f;
 
     [Header("Ground Check")]
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
 
-    private Rigidbody2D rb;
-    private float moveInput;
-    private bool isGrounded;
+    Rigidbody2D rb;
 
-    private bool isJumping;
-    private float jumpTimeCounter;
+    float moveInput;
+    bool isGrounded;
+    bool isJumping;
+    float jumpTimeCounter;
 
     void Start()
     {
@@ -41,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
             groundLayer
         );
 
-        // Jump start (instant takeoff)
+        // Jump start
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
@@ -49,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
             jumpTimeCounter = maxJumpHoldTime;
         }
 
-        // Hold jump (limited)
+        // Jump hold
         if (Input.GetKey(KeyCode.Space) && isJumping)
         {
             if (jumpTimeCounter > 0)
@@ -63,18 +64,14 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        // Release early = small jump
         if (Input.GetKeyUp(KeyCode.Space))
-        {
             isJumping = false;
-        }
 
-        // Fast fall
+        // Better gravity
         if (rb.linearVelocity.y < 0)
         {
             rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
-        // Short hop
         else if (rb.linearVelocity.y > 0 && !Input.GetKey(KeyCode.Space))
         {
             rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
@@ -83,6 +80,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+        bool isRunning = Input.GetKey(KeyCode.LeftShift) && Mathf.Abs(moveInput) > 0.01f;
+        float speed = isRunning ? runSpeed : walkSpeed;
+
+        rb.linearVelocity = new Vector2(moveInput * speed, rb.linearVelocity.y);
     }
 }
