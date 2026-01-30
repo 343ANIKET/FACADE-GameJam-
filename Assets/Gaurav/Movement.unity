@@ -1068,6 +1068,10 @@ PrefabInstance:
       propertyPath: maxJumpHoldTime
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 5372323895753181303, guid: 099255a47179ed847999f33cb5088362, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6738072835926599986, guid: 099255a47179ed847999f33cb5088362, type: 3}
       propertyPath: m_Name
       value: Player
