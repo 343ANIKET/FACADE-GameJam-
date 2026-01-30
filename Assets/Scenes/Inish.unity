@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 30370417}
   - component: {fileID: 30370416}
   - component: {fileID: 30370415}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +398,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1311424699621835870, guid: 099255a47179ed847999f33cb5088362, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2403975741289988133, guid: 099255a47179ed847999f33cb5088362, type: 3}
       propertyPath: m_LocalPosition.x
@@ -446,15 +446,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416094450094279370, guid: 099255a47179ed847999f33cb5088362, type: 3}
       propertyPath: groundLayer.m_Bits
-      value: 72
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 6738072835926599986, guid: 099255a47179ed847999f33cb5088362, type: 3}
       propertyPath: m_Name
-      value: Player (1)
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6738072835926599986, guid: 099255a47179ed847999f33cb5088362, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6970834494311670458, guid: 099255a47179ed847999f33cb5088362, type: 3}
       propertyPath: m_Mass
@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 1398282937}
   - component: {fileID: 1398282938}
   - component: {fileID: 1398282939}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -904,8 +904,8 @@ Canvas:
   m_GameObject: {fileID: 1726119610}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 480264619}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
