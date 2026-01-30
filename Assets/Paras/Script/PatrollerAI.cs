@@ -58,4 +58,14 @@ public class PatrollerAI: EnemyBase
         localScale.x *= -1;
         transform.localScale = localScale;
     }
-}
+
+    // Visual Gizmos for Editor
+    private void OnDrawGizmos()
+    {
+        if (pointA != null && pointB != null)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(pointA.position, pointB.position);
+        }
+    }
+    }
