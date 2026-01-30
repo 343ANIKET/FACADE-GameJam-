@@ -311,7 +311,7 @@ Transform:
   m_GameObject: {fileID: 280205010}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.81, y: -3.63, z: -0.10548303}
+  m_LocalPosition: {x: -8.17, y: -0.71, z: -0.10548303}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 434459698}
   - component: {fileID: 434459697}
   - component: {fileID: 434459696}
-  - component: {fileID: 434459695}
+  - component: {fileID: 434459699}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -336,29 +336,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &434459695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434459694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5552172779b455b418f05a3756386bb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  contactDamage: 10
-  knockbackForce: 5
-  pointA: {fileID: 581408863}
-  pointB: {fileID: 280205011}
-  patrolSpeed: 2
-  waitTime: 1
-  detectionRadius: 5
-  chaseSpeed: 4
-  bounceForce: 7
-  bounceDuration: 0.4
 --- !u!50 &434459696
 Rigidbody2D:
   serializedVersion: 5
@@ -456,6 +433,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &434459699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434459694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ba3dc6a0da6884383682f611e32a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  contactDamage: 10
+  knockbackForce: 5
+  patrolPoints:
+  - {fileID: 581408863}
+  - {fileID: 280205011}
+  - {fileID: 1169494269}
+  - {fileID: 1157245958}
+  patrolSpeed: 2
+  waitTime: 1
+  detectionRadius: 5
+  chaseSpeed: 4
+  bounceForce: 7
+  bounceDuration: 0.4
 --- !u!1 &581408862
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +484,7 @@ Transform:
   m_GameObject: {fileID: 581408862}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.92, y: 6.83, z: -0.10548303}
+  m_LocalPosition: {x: -8.04, y: 3.39, z: -0.10548303}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -729,6 +732,68 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1157245957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1157245958}
+  m_Layer: 0
+  m_Name: D
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1157245958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157245957}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.73, y: 3.49, z: -0.10548303}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1169494268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1169494269}
+  m_Layer: 0
+  m_Name: C
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1169494269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169494268}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.28, y: -0.4, z: -0.10548303}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1494308595
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416094450094279370, guid: 099255a47179ed847999f33cb5088362, type: 3}
       propertyPath: jumpHoldForce
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3416094450094279370, guid: 099255a47179ed847999f33cb5088362, type: 3}
       propertyPath: maxJumpHoldTime
@@ -905,7 +970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416094450094279370, guid: 099255a47179ed847999f33cb5088362, type: 3}
       propertyPath: lowJumpMultiplier
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6738072835926599986, guid: 099255a47179ed847999f33cb5088362, type: 3}
       propertyPath: m_Name
@@ -936,4 +1001,6 @@ SceneRoots:
   - {fileID: 219124909}
   - {fileID: 434459698}
   - {fileID: 280205011}
+  - {fileID: 1169494269}
+  - {fileID: 1157245958}
   - {fileID: 581408863}
