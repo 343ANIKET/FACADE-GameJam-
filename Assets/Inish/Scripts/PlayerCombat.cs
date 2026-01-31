@@ -9,6 +9,11 @@ public class PlayerCombat : MonoBehaviour
     public float maxHealth = 100f;
     public float currentHealth;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip[] hurtSounds;
+    [Range(0.1f, 0.5f)] public float pitchVariation = 0.2f;
+
     /* ===================== SHIELD ===================== */
 
     [Header("Shield")]
@@ -145,12 +150,14 @@ public class PlayerCombat : MonoBehaviour
 
             if (currentShield <= 0f)
             {
-                remainingDamage = -currentShield;
+                // Convert negative shield back to raw damage to apply to health
+                remainingDamage = Mathf.Abs(currentShield) / shieldDamageMultiplier;
                 BreakShield();
             }
             else
             {
                 remainingDamage = 0f;
+                // Optional: Play a "shield hit" sound here
             }
         }
 
@@ -160,6 +167,9 @@ public class PlayerCombat : MonoBehaviour
             currentHealth -= remainingDamage;
             currentHealth = Mathf.Max(currentHealth, 0f);
 
+            // Play Random Hurt Sound with Pitch Shift
+            PlayHurtSound();
+
             if (currentHealth <= 0f)
             {
                 Die();
@@ -167,7 +177,6 @@ public class PlayerCombat : MonoBehaviour
             }
 
             IsTakingDamage = true;
-
             damageFlash?.StartFlash(invincibilityDuration);
             cameraShake?.Shake();
 
@@ -209,5 +218,15 @@ public class PlayerCombat : MonoBehaviour
         invincible = true;
         yield return new WaitForSeconds(invincibilityDuration);
         invincible = false;
+    }
+
+    private void PlayHurtSound()
+    {
+        if (audioSource != null && hurtSounds.Length > 0)
+        {
+            audioSource.pitch = Random.Range(1f - pitchVariation, 1f + pitchVariation);
+            audioSource.PlayOneShot(hurtSounds[Random.Range(0, hurtSounds.Length)]);
+            audioSource.pitch = 1f; // Reset pitch
+        }
     }
 }
