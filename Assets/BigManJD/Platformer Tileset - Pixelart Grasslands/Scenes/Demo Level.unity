@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 568220442}
   - component: {fileID: 568220444}
   - component: {fileID: 568220443}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Decor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -655,7 +655,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.5, y: 0.5, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -1704,8 +1704,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1041495101}
   - component: {fileID: 1041495102}
-  m_Layer: 0
-  m_Name: CharacterSheet_7
+  - component: {fileID: 1041495103}
+  m_Layer: 3
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1781,6 +1782,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1041495103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041495100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183290e2bb86b814c973a7bce012fef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1790837167}
+  cameraShake: {fileID: 1790837174}
 --- !u!1 &1131163345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,7 +1812,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1131163346
 Transform:
   m_ObjectHideFlags: 0
@@ -5158,6 +5173,7 @@ GameObject:
   - component: {fileID: 1790837172}
   - component: {fileID: 1790837171}
   - component: {fileID: 1790837173}
+  - component: {fileID: 1790837174}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5212,7 +5228,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -5252,8 +5268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c9bf3209e38f2c4abb12130eccdeb9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: D:\\Unity\\Celeste-Movement-master\\Assets\\Screenshots\\
-  size: 5
 --- !u!114 &1790837171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5266,17 +5280,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 1
-  m_AssetsPPU: 8
-  m_RefResolutionX: 320
-  m_RefResolutionY: 180
-  m_CropFrame: 0
-  m_GridSnapping: 2
-  m_UpscaleRT: 0
-  m_PixelSnapping: 0
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
 --- !u!114 &1790837172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5289,27 +5292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!114 &1790837173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5322,21 +5304,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7460f1d3ac25243b1b9fecf3405b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings:
-    pixelsPerUnit: 8
-    renderingLayerMask:
-      mask: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 1024
-    textureScale: 0.5
-    preview: 0
-  simulation:
-    stiffness: 70
-    damping: 3
-    blurStrength: 0.5
-    maxDeltaTime: 0.034
-  blitShader: {fileID: 4800000, guid: f34315e2ae49499e9bad3c7cee74f676, type: 3}
+--- !u!114 &1790837174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790837165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00bd1f78139ccb409798f5f0ec8b319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.1
+  strength: 0.08
 --- !u!1 &1927235518
 GameObject:
   m_ObjectHideFlags: 0
@@ -5350,7 +5331,7 @@ GameObject:
   - component: {fileID: 1927235520}
   - component: {fileID: 1927235522}
   - component: {fileID: 1927235523}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5417,7 +5398,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.5, y: 0.5, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
