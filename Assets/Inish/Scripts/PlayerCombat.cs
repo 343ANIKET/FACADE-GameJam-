@@ -58,14 +58,14 @@ public class PlayerCombat : MonoBehaviour
         HandleShieldDrain();
         HandleShieldRegen();
 
-#if UNITY_EDITOR
-        // ===================== DEBUG DAMAGE (PRESS G) =====================
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            Vector2 fakeSource = (Vector2)transform.position + Vector2.left;
-            TakeDamage(20f, fakeSource);
-        }
-#endif
+//#if UNITY_EDITOR
+//        // ===================== DEBUG DAMAGE (PRESS G) =====================
+//        if (Input.GetKeyDown(KeyCode.G))
+//        {
+//            Vector2 fakeSource = (Vector2)transform.position + Vector2.left;
+//            TakeDamage(20f, fakeSource);
+//        }
+//#endif
     }
 
     /* ===================== SHIELD ===================== */

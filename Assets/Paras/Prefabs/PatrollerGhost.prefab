@@ -127,6 +127,7 @@ MonoBehaviour:
   maxHealth: 100
   contactDamage: 10
   knockbackForce: 5
+  playerCombat: {fileID: 0}
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   patrolSpeed: 2
@@ -137,6 +138,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   detectionRefreshRate: 0.1
+  playercombat: {fileID: 0}
 --- !u!61 &6438591234934469187
 BoxCollider2D:
   m_ObjectHideFlags: 0

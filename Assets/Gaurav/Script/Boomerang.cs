@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D), typeof(AudioSource))]
 public class Boomerang : MonoBehaviour
 {
     [Header("Movement")]
@@ -14,12 +14,18 @@ public class Boomerang : MonoBehaviour
     [Header("Combat")]
     public int damage = 20;
 
+    [Header("Audio")]
+    public AudioClip throwSound;
+    public AudioClip hitSound;   // New: Sound when hitting enemy
+    public AudioClip catchSound; // New: Sound when returning to player
+
     [Header("Input")]
     public KeyCode throwKey = KeyCode.Mouse0;
 
     private Rigidbody2D rb;
     private Collider2D col;
     private SpriteRenderer sr;
+    private AudioSource audioSource;
 
     private Transform player;
 
@@ -35,6 +41,7 @@ public class Boomerang : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         sr = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
 
         player = transform.parent;
         localStartPos = transform.localPosition;
@@ -42,7 +49,9 @@ public class Boomerang : MonoBehaviour
         rb.gravityScale = 0;
         rb.freezeRotation = true;
 
-        DisableBoomerang(); // start disabled
+        audioSource.playOnAwake = false;
+
+        DisableBoomerang();
     }
 
     // =========================================================
@@ -68,13 +77,13 @@ public class Boomerang : MonoBehaviour
     }
 
     // =========================================================
-    // THROW
-    // =========================================================
     void Throw()
     {
         isThrown = true;
         returning = false;
         timer = 0f;
+
+        PlaySfx(throwSound);
 
         EnableBoomerang();
 
@@ -89,8 +98,6 @@ public class Boomerang : MonoBehaviour
     }
 
     // =========================================================
-    // RETURN
-    // =========================================================
     void ReturnToPlayer()
     {
         Vector2 dir = ((Vector2)player.position - rb.position).normalized;
@@ -103,11 +110,11 @@ public class Boomerang : MonoBehaviour
     }
 
     // =========================================================
-    // CATCH
-    // =========================================================
     void Catch()
     {
         isThrown = false;
+
+        PlaySfx(catchSound);
 
         transform.SetParent(player, false);
         transform.localPosition = localStartPos;
@@ -116,9 +123,6 @@ public class Boomerang : MonoBehaviour
         DisableBoomerang();
     }
 
-    // =========================================================
-    // ENABLE / DISABLE
-    // =========================================================
     void EnableBoomerang()
     {
         rb.simulated = true;
@@ -129,15 +133,11 @@ public class Boomerang : MonoBehaviour
     void DisableBoomerang()
     {
         rb.linearVelocity = Vector2.zero;
-
         rb.simulated = false;
         col.enabled = false;
         if (sr) sr.enabled = false;
     }
 
-    // =========================================================
-    // DAMAGE
-    // =========================================================
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!isThrown) return;
@@ -145,6 +145,16 @@ public class Boomerang : MonoBehaviour
         if (other.TryGetComponent(out EnemyBase enemy))
         {
             enemy.TakeDamage(damage);
+            PlaySfx(hitSound); // Play hit sound
+        }
+    }
+
+    // Helper to keep code clean
+    private void PlaySfx(AudioClip clip)
+    {
+        if (audioSource && clip)
+        {
+            audioSource.PlayOneShot(clip);
         }
     }
 }

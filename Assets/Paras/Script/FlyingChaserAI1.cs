@@ -27,6 +27,7 @@ public class FlyingChaserAI1 : EnemyBase
     private bool isWaiting = false;
     private bool isChasing = false;
     private bool isBouncing = false;
+    public PlayerCombat playercombat;
 
     // ------------------------------------------------
 
@@ -184,10 +185,14 @@ public class FlyingChaserAI1 : EnemyBase
     {
         if (other.CompareTag("Player") && !isBouncing)
         {
+            Debug.Log($"{gameObject.name} hit the player!");
+
+
             // If we hit the player, stop searching/chasing and bounce
             StopAllCoroutines();
             isSearching = false;
             isWaiting = false;
+            playercombat.TakeDamage(contactDamage, transform.position);
 
             StartCoroutine(HandleBounce(other.transform.position));
         }

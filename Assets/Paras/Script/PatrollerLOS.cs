@@ -19,6 +19,7 @@ public class PatrollerLOS : EnemyBase
     private Transform player;
     private bool isWaiting = false;
     private bool isChasing = false;
+    public PlayerCombat playercombat;
 
     protected override void Awake()
     {
@@ -150,5 +151,18 @@ public class PatrollerLOS : EnemyBase
         Gizmos.color = isChasing ? Color.red : Color.cyan;
         Vector3 direction = transform.localScale.x > 0 ? Vector3.right : Vector3.left;
         Gizmos.DrawRay(transform.position, direction * viewDistance);
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log($"{gameObject.name} hit the player!");
+
+           
+            playercombat.TakeDamage(contactDamage, transform.position);
+
+            
+        }
     }
 }
