@@ -15,6 +15,10 @@ public class PatrollerLOS : EnemyBase
     public LayerMask obstacleLayer; // Should include 'Ground' but NOT 'Player'
     public float detectionRefreshRate = 0.1f;
 
+    [Header("Audio Settings")]
+    public AudioClip attackSound; // Drag your attack sound here in Inspector
+    public AudioSource audioSource;
+
     private Transform targetPoint;
     private Transform player;
     private bool isWaiting = false;
@@ -28,6 +32,11 @@ public class PatrollerLOS : EnemyBase
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null) player = playerObj.transform;
+
+        // Get or add AudioSource component
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     void Update()
@@ -60,6 +69,10 @@ public class PatrollerLOS : EnemyBase
         if (hit.collider != null && hit.collider.CompareTag("Player"))
         {
             Debug.Log(hit);
+            if (!isChasing) // Only play sound when first detecting player
+            {
+                PlayAttackSound();
+            }
             isChasing = true;
         }
         else
@@ -123,6 +136,15 @@ public class PatrollerLOS : EnemyBase
         transform.localScale = localScale;
     }
 
+    void PlayAttackSound()
+    {
+        if (attackSound != null && audioSource != null)
+        {
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
+            audioSource.PlayOneShot(attackSound);
+        }
+    }
+
     public void DebugTakeDamage()
     {
         EnemyBase[] allEnemies = GameObject.FindObjectsByType<EnemyBase>(FindObjectsSortMode.None);
@@ -132,11 +154,6 @@ public class PatrollerLOS : EnemyBase
 
         Debug.Log("Debug: Damaged all enemies!");
     }
-
-
-
-
-
 
     private void OnDrawGizmos()
     {
@@ -159,10 +176,10 @@ public class PatrollerLOS : EnemyBase
         {
             Debug.Log($"{gameObject.name} hit the player!");
 
-           
-            playercombat.TakeDamage(contactDamage, transform.position);
+            // Play attack sound on contact
+            PlayAttackSound();
 
-            
+            playercombat.TakeDamage(contactDamage, transform.position);
         }
     }
 }
