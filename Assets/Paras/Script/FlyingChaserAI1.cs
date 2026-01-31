@@ -5,7 +5,7 @@ using System.Collections;
 public class FlyingChaserAI1 : EnemyBase
 {
     [Header("Patrol Settings")]
-    public Transform[] patrolPoints;   // A B C D
+    public Transform[] patrolPoints;   // A, B, C, D
     public float patrolSpeed = 2f;
     public float waitTime = 1f;
 
@@ -13,12 +13,15 @@ public class FlyingChaserAI1 : EnemyBase
     public float detectionRadius = 5f;
     public float chaseSpeed = 4f;
 
+    [Header("Post-Chase Search")]
+    public float searchTime = 2f;      // How long to wait when player is lost
+    private bool isSearching = false;
+
     [Header("Attack & Bounce")]
     public float bounceForce = 7f;
     public float bounceDuration = 0.4f;
 
     private Transform player;
-
     private int currentIndex = 0;
 
     private bool isWaiting = false;
@@ -35,6 +38,7 @@ public class FlyingChaserAI1 : EnemyBase
         if (p != null)
             player = p.transform;
 
+        // Settings for flying movement
         rb.gravityScale = 0;
         rb.freezeRotation = true;
     }
@@ -43,21 +47,27 @@ public class FlyingChaserAI1 : EnemyBase
 
     void Update()
     {
+        // Priority 1: If bouncing from a hit, do nothing else
         if (isBouncing) return;
 
         CheckDetection();
 
+        // Priority 2: If searching (hovering), do nothing else
+        if (isSearching) return;
+
+        // Priority 3: Movement Logic
         if (isChasing)
             ChasePlayer();
         else if (!isWaiting)
             Patrol();
 
+        // Debug Key
         if (Input.GetKeyDown(KeyCode.K))
             DebugTakeDamage();
     }
 
     // ------------------------------------------------
-    // DETECTION
+    // DETECTION & SEARCH LOGIC
     // ------------------------------------------------
 
     void CheckDetection()
@@ -68,18 +78,38 @@ public class FlyingChaserAI1 : EnemyBase
 
         if (dist < detectionRadius)
         {
+            // If we were searching or waiting, stop that and chase immediately
+            if (isSearching || isWaiting)
+            {
+                StopAllCoroutines();
+                isSearching = false;
+                isWaiting = false;
+            }
             isChasing = true;
         }
         else if (isChasing && dist > detectionRadius)
         {
-            isChasing = false;
-            rb.linearVelocity = Vector2.zero;
-            FindNearestPatrolPoint();
+            // Player just went out of range
+            StartCoroutine(SearchBeforeReturn());
         }
     }
 
+    IEnumerator SearchBeforeReturn()
+    {
+        isChasing = false;
+        isSearching = true;
+
+        // Stop movement immediately
+        rb.linearVelocity = Vector2.zero;
+
+        yield return new WaitForSeconds(searchTime);
+
+        isSearching = false;
+        FindNearestPatrolPoint();
+    }
+
     // ------------------------------------------------
-    // PATROL A → B → C → D → LOOP
+    // PATROL LOGIC
     // ------------------------------------------------
 
     void Patrol()
@@ -87,7 +117,6 @@ public class FlyingChaserAI1 : EnemyBase
         if (patrolPoints == null || patrolPoints.Length == 0) return;
 
         Transform target = patrolPoints[currentIndex];
-
         MoveTowards(target.position, patrolSpeed);
 
         if (Vector2.Distance(transform.position, target.position) < 0.1f)
@@ -99,11 +128,9 @@ public class FlyingChaserAI1 : EnemyBase
     IEnumerator WaitAndNext()
     {
         isWaiting = true;
-
         yield return new WaitForSeconds(waitTime);
 
         currentIndex++;
-
         if (currentIndex >= patrolPoints.Length)
             currentIndex = 0;
 
@@ -117,7 +144,6 @@ public class FlyingChaserAI1 : EnemyBase
         for (int i = 0; i < patrolPoints.Length; i++)
         {
             float d = Vector2.Distance(transform.position, patrolPoints[i].position);
-
             if (d < minDist)
             {
                 minDist = d;
@@ -127,17 +153,13 @@ public class FlyingChaserAI1 : EnemyBase
     }
 
     // ------------------------------------------------
-    // CHASE
+    // MOVEMENT & COMBAT
     // ------------------------------------------------
 
     void ChasePlayer()
     {
         MoveTowards(player.position, chaseSpeed);
     }
-
-    // ------------------------------------------------
-    // MOVEMENT
-    // ------------------------------------------------
 
     void MoveTowards(Vector2 destination, float speed)
     {
@@ -158,15 +180,15 @@ public class FlyingChaserAI1 : EnemyBase
         transform.localScale = s;
     }
 
-    // ------------------------------------------------
-    // BOUNCE
-    // ------------------------------------------------
-
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !isBouncing)
         {
-            Debug.Log("Hit Player!");
+            // If we hit the player, stop searching/chasing and bounce
+            StopAllCoroutines();
+            isSearching = false;
+            isWaiting = false;
+
             StartCoroutine(HandleBounce(other.transform.position));
         }
     }
@@ -184,43 +206,39 @@ public class FlyingChaserAI1 : EnemyBase
 
         rb.linearVelocity = Vector2.zero;
         isBouncing = false;
+
+        // After bouncing, decide whether to re-detect or search
+        CheckDetection();
     }
 
     // ------------------------------------------------
-    // DEBUG
+    // DEBUG & GIZMOS
     // ------------------------------------------------
 
     public void DebugTakeDamage()
     {
         EnemyBase[] allEnemies = GameObject.FindObjectsByType<EnemyBase>(FindObjectsSortMode.None);
-
         foreach (EnemyBase enemy in allEnemies)
             enemy.TakeDamage(20);
 
         Debug.Log("Debug: Damaged all enemies!");
     }
 
-    // ------------------------------------------------
-    // GIZMOS
-    // ------------------------------------------------
-
     private void OnDrawGizmos()
     {
         if (patrolPoints != null && patrolPoints.Length > 1)
         {
             Gizmos.color = Color.yellow;
-
             for (int i = 0; i < patrolPoints.Length; i++)
             {
                 Transform a = patrolPoints[i];
                 Transform b = patrolPoints[(i + 1) % patrolPoints.Length];
-
                 if (a != null && b != null)
                     Gizmos.DrawLine(a.position, b.position);
             }
         }
 
-        Gizmos.color = Color.cyan;
+        Gizmos.color = isSearching ? Color.magenta : Color.cyan;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
 }

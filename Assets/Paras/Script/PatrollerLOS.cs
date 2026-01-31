@@ -42,6 +42,8 @@ public class PatrollerLOS : EnemyBase
         {
             Patrol();
         }
+        if (Input.GetKeyDown(KeyCode.K))
+            DebugTakeDamage();
     }
 
     void CheckLineOfSight()
@@ -119,6 +121,21 @@ public class PatrollerLOS : EnemyBase
         localScale.x *= -1;
         transform.localScale = localScale;
     }
+
+    public void DebugTakeDamage()
+    {
+        EnemyBase[] allEnemies = GameObject.FindObjectsByType<EnemyBase>(FindObjectsSortMode.None);
+
+        foreach (EnemyBase enemy in allEnemies)
+            enemy.TakeDamage(20);
+
+        Debug.Log("Debug: Damaged all enemies!");
+    }
+
+
+
+
+
 
     private void OnDrawGizmos()
     {

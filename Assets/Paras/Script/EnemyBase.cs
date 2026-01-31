@@ -11,7 +11,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected Rigidbody2D rb;
     protected SpriteRenderer sprite;
-    protected Animator anim; // Added this
+    protected Animator anim; 
 
     protected virtual void Awake()
     {
