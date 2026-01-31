@@ -444,7 +444,7 @@ MonoBehaviour:
   walkSpeed: 6
   runSpeed: 10
   jumpForce: 20
-  jumpHoldForce: 9
+  jumpHoldForce: 8.5
   maxJumpHoldTime: 0.3
   fallMultiplier: 4
   lowJumpMultiplier: 3
@@ -548,17 +548,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.013462603}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.875, y: 1.928444}
+    oldSize: {x: 0.78, y: 1.6338989}
     newSize: {x: 1.2500608, y: 1.8285714}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.875, y: 1.928444}
+  m_Size: {x: 0.875, y: 1.677142}
   m_EdgeRadius: 0
 --- !u!82 &3057942340860803108
 AudioSource:
@@ -684,7 +684,7 @@ Transform:
   m_GameObject: {fileID: 7751796088462209002}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.1055919, w: 0.99440956}
-  m_LocalPosition: {x: -0.13, y: 0.21, z: 0}
+  m_LocalPosition: {x: -0.027, y: -0.037, z: 0}
   m_LocalScale: {x: 0.79671, y: 0.79671, z: 0.79671}
   m_ConstrainProportionsScale: 0
   m_Children: []

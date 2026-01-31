@@ -12,18 +12,16 @@ public class CameraShake : MonoBehaviour
     public float spiritSize = 4.7f;
     public float zoomDuration = 0.15f;
 
-    private Vector3 originalPosition;
-    private float originalSize;
+    Camera cam;
+    Coroutine shakeRoutine;
+    Coroutine zoomRoutine;
 
-    private Camera cam;
-    private Coroutine shakeRoutine;
-    private Coroutine zoomRoutine;
+    Vector3 shakeOffset;
 
     void Awake()
     {
         cam = GetComponent<Camera>();
-        originalPosition = transform.localPosition;
-        originalSize = cam.orthographicSize;
+        shakeOffset = Vector3.zero;
     }
 
     /* ===================== SHAKE ===================== */
@@ -43,14 +41,19 @@ public class CameraShake : MonoBehaviour
         while (elapsed < shakeDuration)
         {
             Vector2 offset = Random.insideUnitCircle * shakeStrength;
-            transform.localPosition = originalPosition + (Vector3)offset;
+            shakeOffset = new Vector3(offset.x, offset.y, 0f);
 
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        transform.localPosition = originalPosition;
+        shakeOffset = Vector3.zero;
         shakeRoutine = null;
+    }
+
+    public Vector3 GetShakeOffset()
+    {
+        return shakeOffset;
     }
 
     /* ===================== ZOOM ===================== */
