@@ -1,5 +1,6 @@
 using UnityEngine;
-using System.Collections;   
+using System.Collections;
+
 public abstract class EnemyBase : MonoBehaviour
 {
     [Header("Base Stats")]
@@ -10,12 +11,13 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected Rigidbody2D rb;
     protected SpriteRenderer sprite;
+    protected Animator anim; // Added this
 
-    // 'virtual' allows sub-classes to add their own logic to Start
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>(); // Initialize animator
         currentHealth = maxHealth;
     }
 
@@ -24,7 +26,9 @@ public abstract class EnemyBase : MonoBehaviour
         currentHealth -= damage;
         Debug.Log($"{gameObject.name} took {damage} damage. Health: {currentHealth}");
 
-        // Flash red effect (Quick Jam Polish)
+        // Trigger 'Hurt' animation if it exists
+        if (anim != null) anim.SetTrigger("Hurt");
+
         StartCoroutine(FlashRed());
 
         if (currentHealth <= 0)
@@ -35,24 +39,43 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected virtual void Die()
     {
-        // Add particle effects or sound here later
-        Destroy(gameObject);
-    }
+        if (anim != null)
+        {
+            // Trigger the Death animation
+            anim.SetTrigger("Die");
+
+            // Disable AI and physics to prevent "zombie" attacks
+            this.enabled = false;
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+                rb.bodyType = RigidbodyType2D.Kinematic; // Stop gravity/forces
+            }
+
+            GetComponent<Collider2D>().enabled = false;
+
+            // Destroy after animation (tweak the 1f to match your clip length)
+            Destroy(gameObject, 1f);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    } // Brace was missing here!
 
     private IEnumerator FlashRed()
     {
+        if (sprite == null) yield break;
         sprite.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         sprite.color = Color.white;
     }
 
-    // Handle touching the player
-    protected virtual void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            // Assuming your player script has a TakeDamage method
-            // collision.gameObject.GetComponent<PlayerController>().TakeDamage(contactDamage);
+            // Your Player Damage Logic here
             Debug.Log("Dealt damage to player!");
         }
     }
