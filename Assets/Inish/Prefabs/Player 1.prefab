@@ -444,8 +444,8 @@ MonoBehaviour:
   walkSpeed: 6
   runSpeed: 10
   jumpForce: 20
-  jumpHoldForce: 6
-  maxJumpHoldTime: 0.15
+  jumpHoldForce: 9
+  maxJumpHoldTime: 0.3
   fallMultiplier: 4
   lowJumpMultiplier: 3
   groundCheck: {fileID: 8062005788856946704}
