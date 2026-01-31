@@ -12,11 +12,7 @@ public abstract class EnemyBase : MonoBehaviour
     protected Rigidbody2D rb;
     protected SpriteRenderer sprite;
     protected Animator anim;
-<<<<<<< Updated upstream
     public PlayerCombat playerCombat;
-=======
-
->>>>>>> Stashed changes
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -47,7 +43,6 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-<<<<<<< Updated upstream
         // This WILL print if the physics engine registers ANY overlap
         Debug.Log("<color=red>PHYSICS HIT:</color> Enemy touched by: " + collision.gameObject.name +
                   " | Tag: " + collision.gameObject.tag +
@@ -64,17 +59,6 @@ public abstract class EnemyBase : MonoBehaviour
                 Debug.LogError("Enemy has no PlayerCombat reference!");
             }
         }
-=======
-        if (!collision.CompareTag("Player"))
-            return;
-
-        PlayerCombat playerCombat = collision.GetComponent<PlayerCombat>();
-        if (playerCombat == null)
-            return;
-
-        // Deal damage to the player
-        playerCombat.TakeDamage(contactDamage, transform.position);
->>>>>>> Stashed changes
     }
 
     /* ===================== DEATH ===================== */
@@ -119,8 +103,4 @@ public abstract class EnemyBase : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         sprite.color = original;
     }
-<<<<<<< Updated upstream
 }
-=======
-}
->>>>>>> Stashed changes
