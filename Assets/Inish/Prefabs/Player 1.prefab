@@ -396,7 +396,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3010e0dc431e88f40a1d306928391297, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -467,6 +467,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 4363448564068308345}
   visual: {fileID: 7491328524993986844}
+  audioSource: {fileID: 0}
+  footstepSounds: []
+  pitchVariation: 0.2
+  volume: 0.4
 --- !u!114 &9047234763488845171
 MonoBehaviour:
   m_ObjectHideFlags: 0
