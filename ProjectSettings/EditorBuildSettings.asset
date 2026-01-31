@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Paras/EnemyNPC_Testing_Scene.unity
+    guid: 0f6adb4c63c78b44b985af1c5915e113
+  - enabled: 1
+    path: Assets/Paras/LEVEL3.unity
+    guid: 1a482d1849211c847b03e7becbbe4e41
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0
