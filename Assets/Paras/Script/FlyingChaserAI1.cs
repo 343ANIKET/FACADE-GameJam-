@@ -21,6 +21,10 @@ public class FlyingChaserAI1 : EnemyBase
     public float bounceForce = 7f;
     public float bounceDuration = 0.4f;
 
+    [Header("Audio Settings")]
+    public AudioClip attackSound; // Drag your attack sound here in Inspector
+    public AudioSource audioSource;
+
     private Transform player;
     private int currentIndex = 0;
 
@@ -42,6 +46,11 @@ public class FlyingChaserAI1 : EnemyBase
         // Settings for flying movement
         rb.gravityScale = 0;
         rb.freezeRotation = true;
+
+        // Get or add AudioSource component
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     // ------------------------------------------------
@@ -85,6 +94,11 @@ public class FlyingChaserAI1 : EnemyBase
                 StopAllCoroutines();
                 isSearching = false;
                 isWaiting = false;
+            }
+
+            if (!isChasing) // Only play sound when first detecting player
+            {
+                PlayAttackSound();
             }
             isChasing = true;
         }
@@ -181,17 +195,29 @@ public class FlyingChaserAI1 : EnemyBase
         transform.localScale = s;
     }
 
+    void PlayAttackSound()
+    {
+        if (attackSound != null && audioSource != null)
+        {
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
+            audioSource.PlayOneShot(attackSound);
+        }
+    }
+
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !isBouncing)
         {
             Debug.Log($"{gameObject.name} hit the player!");
 
-
             // If we hit the player, stop searching/chasing and bounce
             StopAllCoroutines();
             isSearching = false;
             isWaiting = false;
+
+            // Play attack sound on contact
+            PlayAttackSound();
+
             playercombat.TakeDamage(contactDamage, transform.position);
 
             StartCoroutine(HandleBounce(other.transform.position));
