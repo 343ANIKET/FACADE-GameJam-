@@ -77,6 +77,14 @@ public class PlayerCombat : MonoBehaviour
 
     void HandleShieldInput()
     {
+        // 🔒 Cannot use shield without mask
+        if (MaskController.Instance == null ||
+            !MaskController.Instance.HasMask)
+        {
+            shieldActive = false;
+            return;
+        }
+
         if (Input.GetKey(KeyCode.E) &&
             shieldCooldownTimer <= 0f &&
             currentShield > 0f)
@@ -88,6 +96,7 @@ public class PlayerCombat : MonoBehaviour
             shieldActive = false;
         }
     }
+
 
     void HandleShieldDrain()
     {
@@ -135,6 +144,15 @@ public class PlayerCombat : MonoBehaviour
     }
 
     /* ===================== DAMAGE ===================== */
+
+    public void Kill()
+    {
+        if (IsDead) return;
+
+        currentHealth = 0f;
+        Die();
+    }
+
 
     public void TakeDamage(float damage, Vector2 sourcePosition)
     {
