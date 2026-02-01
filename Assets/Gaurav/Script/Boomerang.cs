@@ -16,24 +16,24 @@ public class Boomerang : MonoBehaviour
 
     [Header("Audio")]
     public AudioClip throwSound;
-    public AudioClip hitSound;   // New: Sound when hitting enemy
-    public AudioClip catchSound; // New: Sound when returning to player
+    public AudioClip hitSound;
+    public AudioClip catchSound;
 
     [Header("Input")]
     public KeyCode throwKey = KeyCode.Mouse0;
 
-    private Rigidbody2D rb;
-    private Collider2D col;
-    private SpriteRenderer sr;
-    private AudioSource audioSource;
+    Rigidbody2D rb;
+    Collider2D col;
+    SpriteRenderer sr;
+    AudioSource audioSource;
 
-    private Transform player;
+    Transform player;
 
-    private bool isThrown = false;
-    private bool returning = false;
+    bool isThrown = false;
+    bool returning = false;
 
-    private float timer;
-    private Vector3 localStartPos;
+    float timer;
+    Vector3 localStartPos;
 
     // =========================================================
     void Start()
@@ -59,8 +59,20 @@ public class Boomerang : MonoBehaviour
     {
         if (!isThrown)
         {
+            // 🔒 BLOCK THROW IF MASK NOT OWNED
             if (Input.GetKeyDown(throwKey))
-                Throw();
+            {
+                if (MaskController.Instance != null &&
+                    MaskController.Instance.HasMask)
+                {
+                    Throw();
+                }
+                else
+                {
+                    // Optional debug (remove later)
+                    Debug.Log("Cannot throw boomerang — mask not acquired");
+                }
+            }
 
             return;
         }
@@ -93,7 +105,6 @@ public class Boomerang : MonoBehaviour
         mouseWorld.z = 0;
 
         Vector2 dir = (mouseWorld - transform.position).normalized;
-
         rb.linearVelocity = dir * speed;
     }
 
@@ -145,16 +156,13 @@ public class Boomerang : MonoBehaviour
         if (other.TryGetComponent(out EnemyBase enemy))
         {
             enemy.TakeDamage(damage);
-            PlaySfx(hitSound); // Play hit sound
+            PlaySfx(hitSound);
         }
     }
 
-    // Helper to keep code clean
     private void PlaySfx(AudioClip clip)
     {
         if (audioSource && clip)
-        {
             audioSource.PlayOneShot(clip);
-        }
     }
 }

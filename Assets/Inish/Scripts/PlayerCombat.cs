@@ -187,7 +187,7 @@ public class PlayerCombat : MonoBehaviour
 
     /* ===================== DEATH ===================== */
 
-    void Die()
+   void Die()
     {
         IsDead = true;
 
@@ -198,12 +198,30 @@ public class PlayerCombat : MonoBehaviour
         rb.simulated = false;
     }
 
-    // Animation Event
-    public void OnDeathAnimationComplete()
+
+
+   public void ResetPlayerState()
     {
-        // Destroy(gameObject);
-        Debug.Log("Player has died. Game Over.");
+        currentHealth = maxHealth;
+        currentShield = maxShield;
+
+        IsDead = false;
+        IsTakingDamage = false;
+
+        shieldActive = false;
+        invincible = false;
     }
+
+
+
+    // Animation Event
+   public void OnDeathAnimationComplete()
+    {
+        PlayerRespawn respawn = GetComponent<PlayerRespawn>();
+        if (respawn != null)
+            respawn.Respawn();
+    }
+
 
     /* ===================== ROUTINES ===================== */
 
