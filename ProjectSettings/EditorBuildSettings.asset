@@ -18,6 +18,15 @@ EditorBuildSettings:
     path: Assets/Paras/LEVEL3.unity
     guid: 1a482d1849211c847b03e7becbbe4e41
   - enabled: 1
+    path: Assets/Paras/LEVEL4.unity
+    guid: eaba1b9277dc278419ca69f3d27b8445
+  - enabled: 1
+    path: Assets/Scenes/Level5.unity
+    guid: 6f3fcfccd94d7a94b91568308c020093
+  - enabled: 1
+    path: Assets/Scenes/Level6.unity
+    guid: b137d94c19607dc4e8bcb71b7cef8afe
+  - enabled: 0
     path: Assets/Scenes/DummyLevel.unity
     guid: f661d7c86ef3c504ba08b91604659595
   - enabled: 1
@@ -26,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneBetwee Boss Arena To Level1.unity
     guid: fd8dfc6d729573a4087c57539e3c6b18
+  - enabled: 1
+    path: Assets/Gaurav/UI.unity
+    guid: ebf6aedc3563a6a419db0963823ec419
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0

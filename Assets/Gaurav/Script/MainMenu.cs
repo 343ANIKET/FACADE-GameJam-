@@ -10,7 +10,7 @@ public class MainMenuUI : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("Play");
-        //SceneManager.LoadScene(" ");
+        SceneManager.LoadScene("Prolouge");
     }
 
     // QUIT BUTTON
