@@ -194,7 +194,7 @@ MonoBehaviour:
   walkSpeed: 6
   runSpeed: 10
   jumpForce: 20
-  jumpHoldForce: 9
+  jumpHoldForce: 10
   maxJumpHoldTime: 0.3
   fallMultiplier: 4
   lowJumpMultiplier: 3
