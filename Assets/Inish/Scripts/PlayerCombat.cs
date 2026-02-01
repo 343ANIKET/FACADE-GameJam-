@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlayerCombat : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip[] hurtSounds;
     [Range(0.1f, 0.5f)] public float pitchVariation = 0.2f;
+
+    
 
     /* ===================== SHIELD ===================== */
 
@@ -207,15 +210,37 @@ public class PlayerCombat : MonoBehaviour
 
    void Die()
     {
-        StopAllCoroutines();
+        if (IsDead) return;
+
         IsDead = true;
 
         shieldActive = false;
-        
+        StopAllCoroutines();
 
         rb.linearVelocity = Vector2.zero;
         rb.simulated = false;
+
+        // Play death animation (already handled by Animator)
+        
+        // Scene-specific behavior
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (currentScene == "BossArena")
+        {
+            // After death animation, load Level 1
+            StartCoroutine(LoadLevelAfterDeath("SceneBetwee Boss Arena To Level1"));
+        }
     }
+
+    IEnumerator LoadLevelAfterDeath(string sceneName)
+    {
+        // Let death animation play (adjust to clip length)
+        yield return new WaitForSeconds(1.2f);
+
+        SceneManager.LoadScene(sceneName);
+    }
+
+
 
 
 

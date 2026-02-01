@@ -19,10 +19,10 @@ public class MaskController : MonoBehaviour
 
     public MaskState CurrentState { get; private set; }
 
-    public event Action<MaskState> OnMaskStateChanged;
+    // 🔑 Mask availability comes from GameProgress
+    public bool HasMask => GameProgress.HasMask;
 
-    // 🔒 LOCK UNTIL MASK IS PICKED UP
-    public bool HasMask { get; private set; } = false;
+    public event Action<MaskState> OnMaskStateChanged;
 
     void Awake()
     {
@@ -34,13 +34,12 @@ public class MaskController : MonoBehaviour
 
     void Start()
     {
-        // Start in Physical world but LOCKED
         SetState(MaskState.Physical);
     }
 
     void Update()
     {
-        // ❌ Mask not owned → ignore input
+        // ❌ Mask not unlocked yet
         if (!HasMask)
             return;
 
@@ -52,8 +51,8 @@ public class MaskController : MonoBehaviour
 
     public void EnableMask()
     {
-        HasMask = true;
-        Debug.Log("Mask enabled – player can now toggle worlds");
+        GameProgress.HasMask = true;
+        Debug.Log("Mask unlocked permanently");
     }
 
     public void ToggleMask()
@@ -71,16 +70,20 @@ public class MaskController : MonoBehaviour
         {
             mainCamera.cullingMask =
                 LayerMask.GetMask("Player", "Environment");
-            cameraShake?.ZoomToPhysical();
         }
         else
         {
             mainCamera.cullingMask =
                 LayerMask.GetMask("Player", "Enemies");
-            cameraShake?.ZoomToSpirit();
         }
 
         cameraShake?.Shake();
+
+        if (newState == MaskState.Spirit)
+            cameraShake?.ZoomToSpirit();
+        else
+            cameraShake?.ZoomToPhysical();
+
         OnMaskStateChanged?.Invoke(newState);
     }
 }
