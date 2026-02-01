@@ -207,10 +207,11 @@ public class PlayerCombat : MonoBehaviour
 
    void Die()
     {
+        StopAllCoroutines();
         IsDead = true;
 
         shieldActive = false;
-        StopAllCoroutines();
+        
 
         rb.linearVelocity = Vector2.zero;
         rb.simulated = false;

@@ -41,25 +41,25 @@ public abstract class EnemyBase : MonoBehaviour
 
     /* ===================== DEAL DAMAGE TO PLAYER ===================== */
 
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
-    {
-        // This WILL print if the physics engine registers ANY overlap
-        Debug.Log("<color=red>PHYSICS HIT:</color> Enemy touched by: " + collision.gameObject.name +
-                  " | Tag: " + collision.gameObject.tag +
-                  " | Layer: " + LayerMask.LayerToName(collision.gameObject.layer));
+    //protected virtual void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    // This WILL print if the physics engine registers ANY overlap
+    //    Debug.Log("<color=red>PHYSICS HIT:</color> Enemy touched by: " + collision.gameObject.name +
+    //              " | Tag: " + collision.gameObject.tag +
+    //              " | Layer: " + LayerMask.LayerToName(collision.gameObject.layer));
 
-        if (collision.CompareTag("Player"))
-        {
-            if (playerCombat != null)
-            {
-                playerCombat.TakeDamage(contactDamage, transform.position);
-            }
-            else
-            {
-                Debug.LogError("Enemy has no PlayerCombat reference!");
-            }
-        }
-    }
+    //    if (collision.CompareTag("Player"))
+    //    {
+    //        if (playerCombat != null)
+    //        {
+    //            playerCombat.TakeDamage(contactDamage, transform.position);
+    //        }
+    //        else
+    //        {
+    //            Debug.LogError("Enemy has no PlayerCombat reference!");
+    //        }
+    //    }
+    //}
 
     /* ===================== DEATH ===================== */
 
