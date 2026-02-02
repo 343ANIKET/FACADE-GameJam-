@@ -16,11 +16,72 @@ public class BossFlyer : EnemyBase
     private Vector2 idleAnchorPoint;
     public PlayerCombat playercombat;
 
+    [Header("Audio Settings")]
+    public AudioClip spawnSound;
+    public AudioClip attackSound;
+    
+    [Range(0f, 1f)] public float spawnVolume = 1f;
+    [Range(0f, 1f)] public float attackVolume = 1f;
+
+    public AudioSource spawnAudioSource; // For spawn sound
+    public AudioSource attackAudioSource; // For damage sound
+
+
     protected override void Awake()
     {
         base.Awake();
         StartCoroutine(BossLoop());
+        SetupAudio();
+        PlaySpawnSound();
     }
+
+    private void SetupAudio()
+    {
+        // Create first audio source for spawn/death sounds
+        spawnAudioSource = gameObject.AddComponent<AudioSource>();
+        spawnAudioSource.playOnAwake = false;
+        spawnAudioSource.loop = false;
+
+        // Create second audio source for damage/attack sounds
+        attackAudioSource = gameObject.AddComponent<AudioSource>();
+        attackAudioSource.playOnAwake = false;
+        attackAudioSource.loop = false;
+
+        // Configure 3D sound settings (adjust based on your game)
+        ConfigureAudioSource(spawnAudioSource);
+        ConfigureAudioSource(attackAudioSource);
+    }
+
+    private void ConfigureAudioSource(AudioSource source)
+    {
+        source.spatialBlend = 0f; // 1 = full 3D, 0 = 2D
+        source.rolloffMode = AudioRolloffMode.Logarithmic;
+        source.minDistance = 5f;
+        source.maxDistance = 50f;
+        source.dopplerLevel = 0f; // Reduce doppler effect for smoother sound
+    }
+
+    private void PlaySpawnSound()
+    {
+        if (spawnSound != null && spawnAudioSource != null)
+        {
+            spawnAudioSource.clip = spawnSound;
+            spawnAudioSource.volume = spawnVolume;
+            spawnAudioSource.Play();
+            Debug.Log("Boss spawn sound played");
+        }
+    }
+
+
+    private void PlayAttackSound()
+    {
+        if (attackSound != null && attackAudioSource != null)
+        {
+            attackAudioSource.PlayOneShot(attackSound, attackVolume);
+            Debug.Log("Boss attack sound played");
+        }
+    }
+
 
     private IEnumerator BossLoop()
     {
@@ -92,6 +153,7 @@ public class BossFlyer : EnemyBase
             Debug.Log($"{gameObject.name} hit the player!");
 
             anim.SetTrigger("Attack");
+            PlayAttackSound();  
             // Play attack sound on contact
 
             playercombat.TakeDamage(contactDamage, transform.position);
