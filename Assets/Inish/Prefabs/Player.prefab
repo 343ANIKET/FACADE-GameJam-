@@ -114,11 +114,7 @@ GameObject:
   - component: {fileID: 7432880793280848705}
   - component: {fileID: 3238674220513903930}
   - component: {fileID: 624092604866976917}
-  - component: {fileID: 6371845057808171760}
   - component: {fileID: 6004149591254112054}
-  - component: {fileID: 6874491959310743709}
-  - component: {fileID: 7374470605159100842}
-  - component: {fileID: 8989703592292246236}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -247,30 +243,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6371845057808171760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8503066023623963268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29d6ad8721c9c354e8cd1059683daffe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 6
-  runSpeed: 10
-  jumpForce: 20
-  jumpHoldForce: 6
-  maxJumpHoldTime: 0.15
-  fallMultiplier: 4
-  lowJumpMultiplier: 3
-  groundCheck: {fileID: 1811881759067586086}
-  groundCheckRadius: 0.2
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!60 &6004149591254112054
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -345,57 +317,6 @@ PolygonCollider2D:
       - {x: -0.07045178, y: -0.34582618}
       - {x: 0.0763187, y: -0.33114913}
   m_UseDelaunayMesh: 0
---- !u!114 &6874491959310743709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8503066023623963268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d09517d87b60b5d47a133b5331257622, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 624092604866976917}
-  visual: {fileID: 8972217846012330270}
---- !u!114 &7374470605159100842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8503066023623963268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bed7d36407fcf94c9b9bda8477b21c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  maxShield: 50
-  currentShield: 0
-  shieldDrainPerSecond: 2
-  shieldDamageMultiplier: 2
-  shieldRegenPerSecond: 5
-  shieldCooldown: 1.5
-  invincibilityDuration: 0.6
-  cameraShake: {fileID: 0}
-  damageFlash: {fileID: 8989703592292246236}
---- !u!114 &8989703592292246236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8503066023623963268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0701703b62b614b46852bf50595c70de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageColor: {r: 1, g: 0, b: 0, a: 1}
-  blinkInterval: 0.1
 --- !u!1 &8873295301678003711
 GameObject:
   m_ObjectHideFlags: 0
