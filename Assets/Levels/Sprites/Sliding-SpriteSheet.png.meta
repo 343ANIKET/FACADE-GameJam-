@@ -1,0 +1,988 @@
+fileFormatVersion: 2
+guid: 28363c73c2b36f342b368f29fd0fbaa2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -621512496093691339
+    second: Sliding-SpriteSheet_0
+  - first:
+      213: 9098784403361564715
+    second: Sliding-SpriteSheet_1
+  - first:
+      213: 4048268688578895799
+    second: Sliding-SpriteSheet_2
+  - first:
+      213: 972713463420859457
+    second: Sliding-SpriteSheet_3
+  - first:
+      213: 7463109482868279797
+    second: Sliding-SpriteSheet_4
+  - first:
+      213: -5417478420990164426
+    second: Sliding-SpriteSheet_5
+  - first:
+      213: -898733331435281154
+    second: Sliding-SpriteSheet_6
+  - first:
+      213: -678873659922162202
+    second: Sliding-SpriteSheet_7
+  - first:
+      213: -3795188293065571604
+    second: Sliding-SpriteSheet_8
+  - first:
+      213: 9128843882983367519
+    second: Sliding-SpriteSheet_9
+  - first:
+      213: -6993091487143104202
+    second: Sliding-SpriteSheet_10
+  - first:
+      213: 2476018265802167209
+    second: Sliding-SpriteSheet_11
+  - first:
+      213: -2775395193636097843
+    second: Sliding-SpriteSheet_12
+  - first:
+      213: -4076243028872123280
+    second: Sliding-SpriteSheet_13
+  - first:
+      213: -3607310871365717276
+    second: Sliding-SpriteSheet_14
+  - first:
+      213: -5756540330501692881
+    second: Sliding-SpriteSheet_15
+  - first:
+      213: 682637383231463130
+    second: Sliding-SpriteSheet_16
+  - first:
+      213: 1080239157452962739
+    second: Sliding-SpriteSheet_17
+  - first:
+      213: -9075122112811151196
+    second: Sliding-SpriteSheet_18
+  - first:
+      213: -480895847647538067
+    second: Sliding-SpriteSheet_19
+  - first:
+      213: 194197672563579798
+    second: Sliding-SpriteSheet_20
+  - first:
+      213: 5220663287741254603
+    second: Sliding-SpriteSheet_21
+  - first:
+      213: -3192090705850575517
+    second: Sliding-SpriteSheet_22
+  - first:
+      213: 8897861836794858102
+    second: Sliding-SpriteSheet_23
+  - first:
+      213: -700317266769512581
+    second: Sliding-SpriteSheet_24
+  - first:
+      213: 4691347640202098255
+    second: Sliding-SpriteSheet_25
+  - first:
+      213: 1631274318287159934
+    second: Sliding-SpriteSheet_26
+  - first:
+      213: 8357325902022041945
+    second: Sliding-SpriteSheet_27
+  - first:
+      213: 7824799325543633044
+    second: Sliding-SpriteSheet_28
+  - first:
+      213: 7446836533647789619
+    second: Sliding-SpriteSheet_29
+  - first:
+      213: 5061033647777560163
+    second: Sliding-SpriteSheet_30
+  - first:
+      213: -7344831749485160321
+    second: Sliding-SpriteSheet_31
+  - first:
+      213: 3174707040843357555
+    second: Sliding-SpriteSheet_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 250
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 58
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5328ede7da1ff57f0800000000000000
+      internalID: -621512496093691339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 58
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b280b3a1530654e70800000000000000
+      internalID: 9098784403361564715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 59
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bfd4127ce65e2830800000000000000
+      internalID: 4048268688578895799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 58
+        width: 172
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 144b077cdb5cf7d00800000000000000
+      internalID: 972713463420859457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 2123
+        y: 58
+        width: 172
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f9863e888a429760800000000000000
+      internalID: 7463109482868279797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 2637
+        y: 58
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6328982441041d4b0800000000000000
+      internalID: -5417478420990164426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 3151
+        y: 58
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef42ff7fbce0783f0800000000000000
+      internalID: -898733331435281154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 3665
+        y: 58
+        width: 171
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ed58fcc0082496f0800000000000000
+      internalID: -678873659922162202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 4178
+        y: 58
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce20b10fa58c45bc0800000000000000
+      internalID: -3795188293065571604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 4692
+        y: 58
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f53a837152b20be70800000000000000
+      internalID: 9128843882983367519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 5206
+        y: 58
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 631f60be75c83fe90800000000000000
+      internalID: -6993091487143104202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 5720
+        y: 58
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a354868e759c5220800000000000000
+      internalID: 2476018265802167209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 6234
+        y: 58
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc07efba6c0db79d0800000000000000
+      internalID: -2775395193636097843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 6748
+        y: 58
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07c2ae5ef864e67c0800000000000000
+      internalID: -4076243028872123280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 7262
+        y: 58
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e277d5ffd140fdc0800000000000000
+      internalID: -3607310871365717276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 7776
+        y: 58
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f22ac31a119ac10b0800000000000000
+      internalID: -5756540330501692881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 8290
+        y: 58
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aded9e15517397900800000000000000
+      internalID: 682637383231463130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 8804
+        y: 59
+        width: 172
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb73745ac7cdfe00800000000000000
+      internalID: 1080239157452962739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 9318
+        y: 59
+        width: 172
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a0599c3580be0280800000000000000
+      internalID: -9075122112811151196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 9832
+        y: 59
+        width: 172
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d64120346c38359f0800000000000000
+      internalID: -480895847647538067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 10346
+        y: 59
+        width: 173
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69b1c5911cde1b200800000000000000
+      internalID: 194197672563579798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 10860
+        y: 59
+        width: 173
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcb8db59995837840800000000000000
+      internalID: 5220663287741254603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 11374
+        y: 59
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36553fa5a6a63b3d0800000000000000
+      internalID: -3192090705850575517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 11888
+        y: 59
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67a89aa923e8b7b70800000000000000
+      internalID: 8897861836794858102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 12403
+        y: 59
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7771240829f746f0800000000000000
+      internalID: -700317266769512581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 12917
+        y: 59
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f46fc1ca2d30b1140800000000000000
+      internalID: 4691347640202098255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 13431
+        y: 59
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7249b0895373a610800000000000000
+      internalID: 1631274318287159934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 13945
+        y: 59
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 951e13ef0af2bf370800000000000000
+      internalID: 8357325902022041945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 14459
+        y: 59
+        width: 171
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4909ebd6785479c60800000000000000
+      internalID: 7824799325543633044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 14973
+        y: 59
+        width: 171
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33e4a705f5a785760800000000000000
+      internalID: 7446836533647789619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 15487
+        y: 58
+        width: 171
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 366b414c9476c3640800000000000000
+      internalID: 5061033647777560163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 16001
+        y: 58
+        width: 171
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f781dec307ae11a90800000000000000
+      internalID: -7344831749485160321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliding-SpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 16515
+        y: 58
+        width: 172
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37d566bbb33de0c20800000000000000
+      internalID: 3174707040843357555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Sliding-SpriteSheet_0: -621512496093691339
+      Sliding-SpriteSheet_1: 9098784403361564715
+      Sliding-SpriteSheet_10: -6993091487143104202
+      Sliding-SpriteSheet_11: 2476018265802167209
+      Sliding-SpriteSheet_12: -2775395193636097843
+      Sliding-SpriteSheet_13: -4076243028872123280
+      Sliding-SpriteSheet_14: -3607310871365717276
+      Sliding-SpriteSheet_15: -5756540330501692881
+      Sliding-SpriteSheet_16: 682637383231463130
+      Sliding-SpriteSheet_17: 1080239157452962739
+      Sliding-SpriteSheet_18: -9075122112811151196
+      Sliding-SpriteSheet_19: -480895847647538067
+      Sliding-SpriteSheet_2: 4048268688578895799
+      Sliding-SpriteSheet_20: 194197672563579798
+      Sliding-SpriteSheet_21: 5220663287741254603
+      Sliding-SpriteSheet_22: -3192090705850575517
+      Sliding-SpriteSheet_23: 8897861836794858102
+      Sliding-SpriteSheet_24: -700317266769512581
+      Sliding-SpriteSheet_25: 4691347640202098255
+      Sliding-SpriteSheet_26: 1631274318287159934
+      Sliding-SpriteSheet_27: 8357325902022041945
+      Sliding-SpriteSheet_28: 7824799325543633044
+      Sliding-SpriteSheet_29: 7446836533647789619
+      Sliding-SpriteSheet_3: 972713463420859457
+      Sliding-SpriteSheet_30: 5061033647777560163
+      Sliding-SpriteSheet_31: -7344831749485160321
+      Sliding-SpriteSheet_32: 3174707040843357555
+      Sliding-SpriteSheet_4: 7463109482868279797
+      Sliding-SpriteSheet_5: -5417478420990164426
+      Sliding-SpriteSheet_6: -898733331435281154
+      Sliding-SpriteSheet_7: -678873659922162202
+      Sliding-SpriteSheet_8: -3795188293065571604
+      Sliding-SpriteSheet_9: 9128843882983367519
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
