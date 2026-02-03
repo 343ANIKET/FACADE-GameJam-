@@ -448,6 +448,7 @@ MonoBehaviour:
   maxHealth: 100
   contactDamage: 10
   knockbackForce: 5
+  playerCombat: {fileID: 0}
   patrolPoints:
   - {fileID: 581408863}
   - {fileID: 280205011}
@@ -457,8 +458,12 @@ MonoBehaviour:
   waitTime: 1
   detectionRadius: 5
   chaseSpeed: 4
+  searchTime: 2
   bounceForce: 7
   bounceDuration: 0.4
+  attackSound: {fileID: 0}
+  audioSource: {fileID: 0}
+  playercombat: {fileID: 0}
 --- !u!1 &581408862
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,6 +603,12 @@ MonoBehaviour:
   target: {fileID: 1896382687}
   offset: {x: 0, y: 2, z: -10}
   smoothTime: 0.3
+  leftBound: {fileID: 0}
+  rightBound: {fileID: 0}
+  topBound: {fileID: 0}
+  bottomBound: {fileID: 0}
+  cam: {fileID: 0}
+  cameraShake: {fileID: 0}
 --- !u!1 &588188105
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,6 +866,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5211383326372010846, guid: c63cddc40de2117489309d21bd515bd7, type: 3}
   m_PrefabInstance: {fileID: 974772055}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1014810724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1014810725}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1014810725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014810724}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 112.65162, y: 419, z: -11.289912}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1157245957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,7 +1086,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.024, y: 1.024}
+    oldSize: {x: 0.73142856, y: 0.73142856}
     newSize: {x: 1.024, y: 1.024}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1290,7 +1332,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.024, y: 1.024}
+    oldSize: {x: 0.73142856, y: 0.73142856}
     newSize: {x: 1.024, y: 1.024}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1460,3 +1502,4 @@ SceneRoots:
   - {fileID: 1157245958}
   - {fileID: 581408863}
   - {fileID: 974772055}
+  - {fileID: 1014810725}
