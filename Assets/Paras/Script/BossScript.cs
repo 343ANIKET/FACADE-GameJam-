@@ -3,6 +3,9 @@ using System.Collections;
 
 public class BossFlyer : EnemyBase
 {
+
+    public GameObject ExitDoor;
+    public GameObject SceneChangerLast;
     [Header("Boss Movement")]
     public float moveSpeed = 2f;
     public float idleDuration = 3f;
@@ -140,10 +143,14 @@ public class BossFlyer : EnemyBase
 
     protected override void Die()
     {
+        ExitDoor.gameObject.SetActive(true);
+        SceneChangerLast.gameObject.SetActive(true);
         StopAllCoroutines();
+
         rb.linearVelocity = Vector2.zero;
         rb.gravityScale = 1;
         base.Die();
+       
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D other)
