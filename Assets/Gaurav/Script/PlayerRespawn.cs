@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class PlayerRespawn : MonoBehaviour
@@ -11,6 +11,7 @@ public class PlayerRespawn : MonoBehaviour
     PlayerMovement movement;
     PlayerCombat combat;
     Rigidbody2D rb;
+    Animator animator; // ⭐ added
 
     void Awake()
     {
@@ -18,11 +19,11 @@ public class PlayerRespawn : MonoBehaviour
         movement = GetComponent<PlayerMovement>();
         combat = GetComponent<PlayerCombat>();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>(); // ⭐ added
     }
 
     void Start()
     {
-        // Snap player to spawn point on scene start
         if (SpawnPoint.Active != null)
             transform.position = SpawnPoint.Active.position;
     }
@@ -34,26 +35,25 @@ public class PlayerRespawn : MonoBehaviour
 
     IEnumerator RespawnRoutine()
     {
-        // Disable control
         movement.enabled = false;
         rb.linearVelocity = Vector2.zero;
         rb.simulated = false;
 
-        // Fade out
         yield return StartCoroutine(Fade(1f, 0f));
         yield return new WaitForSeconds(respawnDelay);
 
-        // Move player to spawn
         if (SpawnPoint.Active != null)
             transform.position = SpawnPoint.Active.position;
 
-        // Reset stats
         combat.ResetPlayerState();
 
-        // Fade in
+        // ⭐⭐⭐ RESET ANIMATION HERE ⭐⭐⭐
+        animator.Rebind();        // full reset (best)
+        animator.Update(0f);
+        // OR animator.Play("Idle");
+
         yield return StartCoroutine(Fade(0f, 1f));
 
-        // Re-enable control
         rb.simulated = true;
         movement.enabled = true;
     }

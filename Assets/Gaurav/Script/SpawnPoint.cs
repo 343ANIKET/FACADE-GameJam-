@@ -6,7 +6,10 @@ public class SpawnPoint : MonoBehaviour
 
     void Awake()
     {
+       
         if (Active == null)
             Active = transform;
+
+
     }
 }
