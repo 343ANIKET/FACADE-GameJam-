@@ -742,6 +742,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneChanger
       objectReference: {fileID: 0}
+    - target: {fileID: 3545944879196401921, guid: 4b61ddc8b3ce4f14e96279ef5fa8bcae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5608618489258855916, guid: 4b61ddc8b3ce4f14e96279ef5fa8bcae, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.53331
@@ -796,7 +800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6435830465447790174, guid: 4b61ddc8b3ce4f14e96279ef5fa8bcae, type: 3}
       propertyPath: sceneToLoad
-      value: UI
+      value: TheEnd
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

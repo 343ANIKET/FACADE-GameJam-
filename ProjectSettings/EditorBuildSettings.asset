@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Levels/Prolouge.unity
     guid: 99a50f1f378fcc84780bf6d4aaa8e5cf
   - enabled: 1
-    path: Assets/Scenes/SceneBetwee Boss Arena To Level1.unity
+    path: Assets/Levels/SceneBetwee Boss Arena To Level1.unity
     guid: fd8dfc6d729573a4087c57539e3c6b18
   - enabled: 1
     path: Assets/Levels/Level1.unity
