@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Player, Water, UI, Environment, Enemies, backgroundTiles
 - Active game object:
-  - Name: Player
-  - Tag: Player
+  - Name: DashAfterImage
+  - Tag: Untagged
   - Layer: Player
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
