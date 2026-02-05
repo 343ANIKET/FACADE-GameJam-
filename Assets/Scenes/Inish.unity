@@ -788,7 +788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1523277047556773041, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
       propertyPath: dashKey
-      value: 110
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 1523277047556773041, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
       propertyPath: jumpHoldForce

@@ -6,7 +6,8 @@ public class CameraFollow : MonoBehaviour
     public Transform target;
 
     [Header("Offset")]
-    public Vector3 offset = new Vector3(3f, 2f, -10f);
+    public Vector3 offset = new Vector3(0f, 2f, -10f);
+
 
     [Header("Smooth Follow")]
     public float smoothTime = 0.2f;
@@ -36,7 +37,7 @@ public class CameraFollow : MonoBehaviour
     public CameraShake cameraShake;
 
     Vector3 velocity;
-    float originalOffsetX;
+ 
 
     float currentLookOffsetY;
     float lookVelocityY;
@@ -56,7 +57,7 @@ public class CameraFollow : MonoBehaviour
     {
         if (target == null) return;
 
-        originalOffsetX = Mathf.Abs(offset.x);
+        
         targetRb = target.GetComponent<Rigidbody2D>();
         movement = target.GetComponent<PlayerMovement>();
     }
@@ -64,10 +65,6 @@ public class CameraFollow : MonoBehaviour
     void LateUpdate()
     {
         if (target == null || cam == null) return;
-
-        /* ===================== FLIP OFFSET ===================== */
-        float facing = Mathf.Sign(target.localScale.x);
-        offset.x = originalOffsetX * facing;
 
         /* ===================== LOOK UP / DOWN ===================== */
         float targetLookY = 0f;
@@ -85,15 +82,16 @@ public class CameraFollow : MonoBehaviour
         );
 
         /* ===================== LOOK AHEAD ===================== */
-        float xVel = targetRb != null ? targetRb.linearVelocity.x : 0f;
-        float desiredLookX = Mathf.Clamp(xVel / 10f, -1f, 1f) * lookAheadDistance;
+            float inputX = Input.GetAxisRaw("Horizontal");
+            float desiredLookX = inputX * lookAheadDistance;
 
-        lookAheadX = Mathf.SmoothDamp(
-            lookAheadX,
-            desiredLookX,
-            ref lookAheadVelocity,
-            lookAheadSmooth
-        );
+            lookAheadX = Mathf.SmoothDamp(
+                lookAheadX,
+                desiredLookX,
+                ref lookAheadVelocity,
+                lookAheadSmooth
+            );
+
 
         /* ===================== LANDING IMPACT ===================== */
         bool grounded = movement != null && movement.IsGrounded;
