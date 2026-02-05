@@ -9,8 +9,10 @@ public class PlayerUI : MonoBehaviour
 
     void Update()
     {
-        healthFill.fillAmount = player.currentHealth / player.maxHealth;
-        shieldFill.fillAmount = player.currentShield / player.maxShield;
+        if (player == null) return;
+
+        healthFill.fillAmount = player.currentHealth / (float)player.maxHealth;
+        shieldFill.fillAmount = player.currentShield / (float)player.maxShield;
 
         shieldFill.enabled = player.currentShield > 0;
     }

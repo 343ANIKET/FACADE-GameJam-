@@ -5,12 +5,13 @@ public class MaskGrab : MonoBehaviour
     [Header("Bobbing")]
     public float bobHeight = 0.25f;
     public float bobSpeed = 2f;
-
+    public GameObject SceneChanger;
     Vector3 startPosition;
 
     void Start()
     {
         startPosition = transform.position;
+        SceneChanger.SetActive(false);
     }
 
     void Update()
@@ -28,9 +29,12 @@ public class MaskGrab : MonoBehaviour
         if (MaskController.Instance != null)
         {
             MaskController.Instance.EnableMask();
+           
+
         }
 
         Debug.Log("Mask Grabbed");
         Destroy(gameObject);
+        SceneChanger.SetActive(true);
     }
 }

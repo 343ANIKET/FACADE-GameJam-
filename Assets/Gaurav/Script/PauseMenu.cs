@@ -2,11 +2,24 @@
 
 public class PauseMenu : MonoBehaviour
 {
-    [Header("Panels")]
+    public static PauseMenu Instance;
+
     public GameObject pausePanel;
     public GameObject mainMenuPanel;
 
     private bool isPaused = false;
+
+    void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start()
     {
@@ -17,14 +30,11 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !mainMenuPanel.activeSelf)
         {
-            if (isPaused)
-                Resume();
-            else
-                Pause();
+            if (isPaused) Resume();
+            else Pause();
         }
     }
 
-    // CONTINUE
     public void Resume()
     {
         pausePanel.SetActive(false);
@@ -32,7 +42,6 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
     }
 
-    // PAUSE
     void Pause()
     {
         pausePanel.SetActive(true);
@@ -40,14 +49,11 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
     }
 
-    // QUIT → go back to main menu panel
     public void QuitGame()
     {
         Time.timeScale = 1f;
-
         pausePanel.SetActive(false);
         mainMenuPanel.SetActive(true);
-
         isPaused = false;
     }
 }
