@@ -23,7 +23,9 @@ public class FlyingChaserAI1 : EnemyBase
 
     [Header("Audio Settings")]
     public AudioClip attackSound; // Drag your attack sound here in Inspector
-    public AudioSource audioSource;
+    public AudioSource attackSource;
+    public AudioClip spawnSound;  // Drag your spawn sound here in Inspector
+    public AudioSource spawnSource;
 
     private Transform player;
     private int currentIndex = 0;
@@ -31,6 +33,7 @@ public class FlyingChaserAI1 : EnemyBase
     private bool isWaiting = false;
     private bool isChasing = false;
     private bool isBouncing = false;
+    private bool playerInRadius = false; // Track if player is currently in radius
     public PlayerCombat playercombat;
 
     // ------------------------------------------------
@@ -47,10 +50,15 @@ public class FlyingChaserAI1 : EnemyBase
         rb.gravityScale = 0;
         rb.freezeRotation = true;
 
-        // Get or add AudioSource component
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-            audioSource = gameObject.AddComponent<AudioSource>();
+        // Get or add AudioSource components
+        attackSource = GetComponent<AudioSource>();
+        if (attackSource == null)
+            attackSource = gameObject.AddComponent<AudioSource>();
+
+        // Make sure spawnSource is initialized
+        spawnSource = GetComponent<AudioSource>();
+        if (spawnSource == null)
+            spawnSource = gameObject.AddComponent<AudioSource>();
     }
 
     // ------------------------------------------------
@@ -85,9 +93,13 @@ public class FlyingChaserAI1 : EnemyBase
         if (player == null) return;
 
         float dist = Vector2.Distance(transform.position, player.position);
+        bool currentlyInRadius = dist < detectionRadius;
 
-        if (dist < detectionRadius)
+        // Player just entered radius
+        if (currentlyInRadius && !playerInRadius)
         {
+            PlaySpawnSound();
+
             // If we were searching or waiting, stop that and chase immediately
             if (isSearching || isWaiting)
             {
@@ -96,17 +108,21 @@ public class FlyingChaserAI1 : EnemyBase
                 isWaiting = false;
             }
 
-            if (!isChasing) // Only play sound when first detecting player
-            {
-                PlayAttackSound();
-            }
             isChasing = true;
         }
-        else if (isChasing && dist > detectionRadius)
+        // Player just left radius while we were chasing
+        else if (!currentlyInRadius && isChasing)
         {
             // Player just went out of range
             StartCoroutine(SearchBeforeReturn());
         }
+        // Player is in radius but we're not chasing (edge case)
+        else if (currentlyInRadius && !isChasing)
+        {
+            isChasing = true;
+        }
+
+        playerInRadius = currentlyInRadius;
     }
 
     IEnumerator SearchBeforeReturn()
@@ -197,10 +213,19 @@ public class FlyingChaserAI1 : EnemyBase
 
     void PlayAttackSound()
     {
-        if (attackSound != null && audioSource != null)
+        if (attackSound != null && attackSource != null)
         {
-            audioSource.pitch = Random.Range(0.9f, 1.1f);
-            audioSource.PlayOneShot(attackSound);
+            attackSource.pitch = Random.Range(0.9f, 1.1f);
+            attackSource.PlayOneShot(attackSound);
+        }
+    }
+
+    void PlaySpawnSound()
+    {
+        if (spawnSound != null && spawnSource != null)
+        {
+            spawnSource.pitch = Random.Range(0.9f, 1.1f);
+            spawnSource.PlayOneShot(spawnSound);
         }
     }
 
@@ -215,7 +240,7 @@ public class FlyingChaserAI1 : EnemyBase
             isSearching = false;
             isWaiting = false;
 
-            // Play attack sound on contact
+            // Play attack sound on contact with player
             PlayAttackSound();
 
             playercombat.TakeDamage(contactDamage, transform.position);
