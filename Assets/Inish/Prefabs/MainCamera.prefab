@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4158127178853336026}
   - component: {fileID: 9085719320790877944}
   - component: {fileID: 1736645035612184639}
+  - component: {fileID: -3494846643448350092}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -106,11 +107,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00bd1f78139ccb409798f5f0ec8b319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeDuration: 0.1
-  shakeStrength: 0.08
+  shakeDecay: 6
+  defaultShakeStrength: 0.08
   physicalSize: 5
   spiritSize: 4.7
-  zoomDuration: 0.15
+  zoomSmoothTime: 0.12
 --- !u!114 &1736645035612184639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,9 +131,25 @@ MonoBehaviour:
   lookSmoothTime: 0.15
   lookUpKey: 105
   lookDownKey: 107
+  lookAheadDistance: 2
+  lookAheadSmooth: 0.15
+  landingDrop: 0.4
+  landingSmooth: 0.12
   leftBound: {fileID: 0}
   rightBound: {fileID: 0}
   topBound: {fileID: 0}
   bottomBound: {fileID: 0}
   cam: {fileID: 1325132857695976523}
   cameraShake: {fileID: 9085719320790877944}
+--- !u!114 &-3494846643448350092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5996554160662277084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94439db0e543e2e48b9fca5845bc4556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
