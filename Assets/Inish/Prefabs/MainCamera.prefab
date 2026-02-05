@@ -123,6 +123,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91824070cf63ea245b5e5a8c438c1035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 466508184933741843, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
   offset: {x: 3, y: 2, z: -10}
   smoothTime: 0.2
+  lookOffsetY: 3
+  lookSmoothTime: 0.15
+  lookUpKey: 105
+  lookDownKey: 107
+  leftBound: {fileID: 0}
+  rightBound: {fileID: 0}
+  topBound: {fileID: 0}
+  bottomBound: {fileID: 0}
+  cam: {fileID: 1325132857695976523}
+  cameraShake: {fileID: 9085719320790877944}

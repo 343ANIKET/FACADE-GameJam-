@@ -1,54 +1,63 @@
 using UnityEngine;
-using System.Collections;
 
 public class CameraShake : MonoBehaviour
 {
-    [Header("Shake Settings")]
-    public float shakeDuration = 0.1f;
-    public float shakeStrength = 0.08f;
+    [Header("Shake")]
+    public float shakeDecay = 6f;
+    public float defaultShakeStrength = 0.08f;
 
-    [Header("Zoom Settings")]
+    [Header("Zoom")]
     public float physicalSize = 5f;
     public float spiritSize = 4.7f;
-    public float zoomDuration = 0.15f;
+    public float zoomSmoothTime = 0.12f;
 
     Camera cam;
-    Coroutine shakeRoutine;
-    Coroutine zoomRoutine;
 
     Vector3 shakeOffset;
+    Vector3 shakeVelocity;
+
+    float targetZoom;
+    float zoomVelocity;
 
     void Awake()
     {
         cam = GetComponent<Camera>();
-        shakeOffset = Vector3.zero;
+        targetZoom = cam.orthographicSize;
+    }
+
+    void LateUpdate()
+    {
+        /* ===================== SHAKE DECAY ===================== */
+        shakeOffset = Vector3.SmoothDamp(
+            shakeOffset,
+            Vector3.zero,
+            ref shakeVelocity,
+            1f / shakeDecay
+        );
+
+        /* ===================== ZOOM ===================== */
+        cam.orthographicSize = Mathf.SmoothDamp(
+            cam.orthographicSize,
+            targetZoom,
+            ref zoomVelocity,
+            zoomSmoothTime
+        );
     }
 
     /* ===================== SHAKE ===================== */
 
     public void Shake()
     {
-        if (shakeRoutine != null)
-            StopCoroutine(shakeRoutine);
-
-        shakeRoutine = StartCoroutine(ShakeRoutine());
+        Vector2 randomDir = Random.insideUnitCircle.normalized;
+        Shake(randomDir, defaultShakeStrength);
     }
 
-    IEnumerator ShakeRoutine()
+    public void Shake(Vector2 direction, float strength)
     {
-        float elapsed = 0f;
+        if (direction == Vector2.zero)
+            direction = Random.insideUnitCircle;
 
-        while (elapsed < shakeDuration)
-        {
-            Vector2 offset = Random.insideUnitCircle * shakeStrength;
-            shakeOffset = new Vector3(offset.x, offset.y, 0f);
-
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        shakeOffset = Vector3.zero;
-        shakeRoutine = null;
+        shakeOffset = direction.normalized * strength;
     }
 
     public Vector3 GetShakeOffset()
@@ -60,35 +69,16 @@ public class CameraShake : MonoBehaviour
 
     public void ZoomToSpirit()
     {
-        StartZoom(spiritSize);
+        targetZoom = spiritSize;
     }
 
     public void ZoomToPhysical()
     {
-        StartZoom(physicalSize);
+        targetZoom = physicalSize;
     }
 
-    void StartZoom(float targetSize)
+    public void ZoomTo(float size)
     {
-        if (zoomRoutine != null)
-            StopCoroutine(zoomRoutine);
-
-        zoomRoutine = StartCoroutine(ZoomRoutine(targetSize));
-    }
-
-    IEnumerator ZoomRoutine(float target)
-    {
-        float start = cam.orthographicSize;
-        float t = 0f;
-
-        while (t < zoomDuration)
-        {
-            cam.orthographicSize = Mathf.Lerp(start, target, t / zoomDuration);
-            t += Time.deltaTime;
-            yield return null;
-        }
-
-        cam.orthographicSize = target;
-        zoomRoutine = null;
+        targetZoom = size;
     }
 }

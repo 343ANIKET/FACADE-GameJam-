@@ -43,11 +43,11 @@ GameObject:
   - component: {fileID: 1109069551389725012}
   - component: {fileID: 5551059599308752596}
   - component: {fileID: 6467160213282053729}
+  - component: {fileID: 3934981550442333508}
   - component: {fileID: 1523277047556773041}
   - component: {fileID: 6054796584601415134}
   - component: {fileID: 8638342549935888793}
   - component: {fileID: 7123579086386470007}
-  - component: {fileID: 3934981550442333508}
   - component: {fileID: 2720499221615903563}
   - component: {fileID: 4337459246733904915}
   m_Layer: 3
@@ -179,6 +179,52 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &3934981550442333508
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4811887577896298382}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.875, y: 1.928444}
+    newSize: {x: 0.875, y: 1.928444}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.875, y: 1.928444}
+  m_EdgeRadius: 0
 --- !u!114 &1523277047556773041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,8 +242,20 @@ MonoBehaviour:
   jumpForce: 20
   jumpHoldForce: 10
   maxJumpHoldTime: 0.3
+  coyoteTime: 0.1
+  jumpBufferTime: 0.1
+  apexBoost: 2.5
+  apexThreshold: 1
   fallMultiplier: 4
   lowJumpMultiplier: 3
+  maxFallSpeed: -18
+  dashSpeed: 20
+  dashDuration: 0.15
+  dashCooldown: 0.15
+  dashKey: 110
+  afterimagePrefab: {fileID: 850481553149617579, guid: fff7fab84b874c244bc9e8e55453fdd5, type: 3}
+  afterimageSpawnInterval: 0.04
+  maxAfterimages: 4
   groundCheck: {fileID: 6040096621419023325}
   groundCheckRadius: 0.2
   groundLayer:
@@ -248,7 +306,9 @@ MonoBehaviour:
   shieldRegenPerSecond: 5
   shieldCooldown: 1.5
   invincibilityDuration: 0.6
-  cameraShake: {fileID: 0}
+  knockbackForceX: 10
+  knockbackDisableTime: 0.15
+  cameraShake: {fileID: 9085719320790877944, guid: 10da1165c79e8d545b5439e67435a8e6, type: 3}
   damageFlash: {fileID: 7123579086386470007}
 --- !u!114 &7123579086386470007
 MonoBehaviour:
@@ -264,52 +324,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   blinkInterval: 0.1
---- !u!61 &3934981550442333508
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4811887577896298382}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.875, y: 1.928444}
-    newSize: {x: 0.875, y: 1.928444}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.875, y: 1.928444}
-  m_EdgeRadius: 0
 --- !u!82 &2720499221615903563
 AudioSource:
   m_ObjectHideFlags: 0
