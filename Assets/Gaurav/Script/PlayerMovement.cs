@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     public float dashSpeed = 20f;
     public float dashDuration = 0.15f;
     public float dashCooldown = 0.15f;
-    public KeyCode dashKey = KeyCode.N;
+    public KeyCode dashKey = KeyCode.C;
 
     [Header("Dash Afterimage")]
     public DashAfterimage afterimagePrefab;

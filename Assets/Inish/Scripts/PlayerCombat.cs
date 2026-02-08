@@ -241,8 +241,11 @@ public class PlayerCombat : MonoBehaviour
         shieldActive = false;
         StopAllCoroutines();
 
-        rb.linearVelocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero; // ⭐ FIX (not linearVelocity)
         rb.simulated = false;
+
+        // ⭐⭐⭐ CALL RESPAWN HERE ⭐⭐⭐
+        GetComponent<PlayerRespawn>()?.Respawn();
 
         string currentScene = SceneManager.GetActiveScene().name;
 
@@ -251,6 +254,7 @@ public class PlayerCombat : MonoBehaviour
             StartCoroutine(LoadLevelAfterDeath("SceneBetwee Boss Arena To Level1"));
         }
     }
+
 
     IEnumerator LoadLevelAfterDeath(string sceneName)
     {
