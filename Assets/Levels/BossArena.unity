@@ -413,6 +413,14 @@ PrefabInstance:
       propertyPath: dashKey
       value: 99
       objectReference: {fileID: 0}
+    - target: {fileID: 2720499221615903563, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2720499221615903563, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4337459246733904915, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
       propertyPath: respawnDelay
       value: 1
@@ -421,6 +429,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 6054796584601415134, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+      propertyPath: volume
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6054796584601415134, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 562171227}
+    - target: {fileID: 6054796584601415134, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+      propertyPath: footstepSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6054796584601415134, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+      propertyPath: 'footstepSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f1b9b6c884d7e04a9a861eed14e19d2, type: 3}
+    - target: {fileID: 6054796584601415134, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+      propertyPath: 'footstepSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b96424f113f7644bb218f49ec8096e5, type: 3}
+    - target: {fileID: 6054796584601415134, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+      propertyPath: 'footstepSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 0d9ef8dc50d4bf1469f536d76def1204, type: 3}
     - target: {fileID: 8638342549935888793, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
       propertyPath: cameraShake
       value: 
@@ -430,6 +462,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+--- !u!82 &562171227 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2720499221615903563, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+  m_PrefabInstance: {fileID: 562171226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &637063085
 PrefabInstance:
   m_ObjectHideFlags: 0

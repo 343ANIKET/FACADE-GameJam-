@@ -32076,10 +32076,42 @@ PrefabInstance:
       propertyPath: dashKey
       value: 99
       objectReference: {fileID: 0}
+    - target: {fileID: 2720499221615903563, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2720499221615903563, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4811887577896298382, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
       propertyPath: m_Name
       value: MainPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 6054796584601415134, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+      propertyPath: volume
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6054796584601415134, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1701059035}
+    - target: {fileID: 6054796584601415134, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+      propertyPath: footstepSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6054796584601415134, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+      propertyPath: 'footstepSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f1b9b6c884d7e04a9a861eed14e19d2, type: 3}
+    - target: {fileID: 6054796584601415134, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+      propertyPath: 'footstepSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b96424f113f7644bb218f49ec8096e5, type: 3}
+    - target: {fileID: 6054796584601415134, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+      propertyPath: 'footstepSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 0d9ef8dc50d4bf1469f536d76def1204, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32096,6 +32128,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bed7d36407fcf94c9b9bda8477b21c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1701059035 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2720499221615903563, guid: da4b44c2757f0894b862f8e268d753c9, type: 3}
+  m_PrefabInstance: {fileID: 1701059033}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1716733357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32341,7 +32378,7 @@ MonoBehaviour:
 
     Press C to dash
 
-    
+
 
     Hold TAB and CTRL to move the camera
 
