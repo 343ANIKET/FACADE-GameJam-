@@ -17,7 +17,7 @@ public class Boomerang : MonoBehaviour
     [Header("Audio")]
     public AudioClip throwSound;
     public AudioClip hitSound;
-    public AudioClip catchSound;
+    //public AudioClip catchSound;
 
     [Header("Input")]
     public KeyCode throwKey = KeyCode.Mouse0;
@@ -125,7 +125,7 @@ public class Boomerang : MonoBehaviour
     {
         isThrown = false;
 
-        PlaySfx(catchSound);
+        //PlaySfx(catchSound);
 
         transform.SetParent(player, false);
         transform.localPosition = localStartPos;

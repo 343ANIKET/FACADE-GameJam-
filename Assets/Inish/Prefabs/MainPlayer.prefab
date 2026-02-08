@@ -275,10 +275,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6467160213282053729}
   visual: {fileID: 466508184933741843}
-  audioSource: {fileID: 0}
-  footstepSounds: []
+  audioSource: {fileID: 2720499221615903563}
+  footstepSounds:
+  - {fileID: 8300000, guid: 6f1b9b6c884d7e04a9a861eed14e19d2, type: 3}
+  - {fileID: 8300000, guid: 7b96424f113f7644bb218f49ec8096e5, type: 3}
+  - {fileID: 8300000, guid: 0d9ef8dc50d4bf1469f536d76def1204, type: 3}
   pitchVariation: 0.2
-  volume: 0.4
+  volume: 1
 --- !u!114 &8638342549935888793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -713,9 +716,8 @@ MonoBehaviour:
   travelTime: 0.5
   rotateSpeed: 3000
   damage: 20
-  throwSound: {fileID: 8300000, guid: 362906d83644a5346af93c53d1ec0031, type: 3}
+  throwSound: {fileID: 8300000, guid: 0b2667aaa6f92b84e85fb2e0f1e2cfd2, type: 3}
   hitSound: {fileID: 8300000, guid: a99e6e760c3338a4f96f73b9e83d0efc, type: 3}
-  catchSound: {fileID: 8300000, guid: 362906d83644a5346af93c53d1ec0031, type: 3}
   throwKey: 323
 --- !u!1 &8739709029225585470
 GameObject:
