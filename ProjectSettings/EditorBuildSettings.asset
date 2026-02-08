@@ -12,7 +12,10 @@ EditorBuildSettings:
     path: Assets/Levels/Prolouge.unity
     guid: 99a50f1f378fcc84780bf6d4aaa8e5cf
   - enabled: 1
-    path: Assets/Levels/SceneBetwee Boss Arena To Level1.unity
+    path: Assets/Levels/BossArena.unity
+    guid: 2163ef1bf83b8eb4c85a07288fb2d02f
+  - enabled: 1
+    path: Assets/Levels/SceneBetwee Level3 To Level4.unity
     guid: fd8dfc6d729573a4087c57539e3c6b18
   - enabled: 1
     path: Assets/Levels/Level1.unity
@@ -23,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/LEVEL3.unity
     guid: 1a482d1849211c847b03e7becbbe4e41
+  - enabled: 1
+    path: Assets/Levels/SceneBetwee BossArena To Level1.unity
+    guid: c1a88fdc1b65d8a429bf01906976a936
   - enabled: 1
     path: Assets/Levels/LEVEL4.unity
     guid: eaba1b9277dc278419ca69f3d27b8445
@@ -38,9 +44,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/DummyLevel.unity
     guid: f661d7c86ef3c504ba08b91604659595
-  - enabled: 1
-    path: Assets/Levels/BossArena.unity
-    guid: 2163ef1bf83b8eb4c85a07288fb2d02f
   - enabled: 1
     path: Assets/Levels/TheEnd.unity
     guid: 695d2e54dd08a61438b8610b6ce081e5

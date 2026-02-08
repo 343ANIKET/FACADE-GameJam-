@@ -251,7 +251,7 @@ public class PlayerCombat : MonoBehaviour
 
         if (currentScene == "BossArena")
         {
-            StartCoroutine(LoadLevelAfterDeath("SceneBetwee Boss Arena To Level1"));
+            StartCoroutine(LoadLevelAfterDeath("SceneBetwee BossArena To Level1"));
         }
     }
 
