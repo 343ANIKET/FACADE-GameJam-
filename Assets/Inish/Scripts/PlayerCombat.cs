@@ -15,8 +15,6 @@ public class PlayerCombat : MonoBehaviour
     public AudioClip[] hurtSounds;
     [Range(0.1f, 0.5f)] public float pitchVariation = 0.2f;
 
-    
-
     /* ===================== SHIELD ===================== */
 
     [Header("Shield")]
@@ -31,6 +29,12 @@ public class PlayerCombat : MonoBehaviour
 
     public float invincibilityDuration = 0.6f;
 
+    /* ===================== KNOCKBACK ===================== */
+
+    [Header("Knockback")]
+    public float knockbackForceX = 10f;
+    public float knockbackDisableTime = 0.15f;
+
     /* ===================== FEEDBACK ===================== */
 
     public CameraShake cameraShake;
@@ -42,18 +46,23 @@ public class PlayerCombat : MonoBehaviour
     public bool IsShieldActive => shieldActive;
     public bool ShieldJustBroke { get; private set; }
     public bool IsDead { get; private set; }
+    public bool IsKnockedBack => isKnockedBack;
 
     Rigidbody2D rb;
+    PlayerMovement movement;
 
     bool shieldActive;
     bool invincible;
+
+    bool isKnockedBack;
+    float knockbackTimer;
     float shieldCooldownTimer;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        movement = GetComponent<PlayerMovement>();
 
-        // IMPORTANT: make sure runtime values are correct
         currentHealth = maxHealth;
         currentShield = maxShield;
     }
@@ -62,25 +71,23 @@ public class PlayerCombat : MonoBehaviour
     {
         if (IsDead) return;
 
+        // Knockback lock timer
+        if (isKnockedBack)
+        {
+            knockbackTimer -= Time.deltaTime;
+            if (knockbackTimer <= 0f)
+                isKnockedBack = false;
+        }
+
         HandleShieldInput();
         HandleShieldDrain();
         HandleShieldRegen();
-
-//#if UNITY_EDITOR
-//        // ===================== DEBUG DAMAGE (PRESS G) =====================
-//        if (Input.GetKeyDown(KeyCode.G))
-//        {
-//            Vector2 fakeSource = (Vector2)transform.position + Vector2.left;
-//            TakeDamage(20f, fakeSource);
-//        }
-//#endif
     }
 
     /* ===================== SHIELD ===================== */
 
     void HandleShieldInput()
     {
-        // 🔒 Cannot use shield without mask
         if (MaskController.Instance == null ||
             !MaskController.Instance.HasMask)
         {
@@ -100,7 +107,6 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-
     void HandleShieldDrain()
     {
         if (!shieldActive) return;
@@ -108,9 +114,7 @@ public class PlayerCombat : MonoBehaviour
         currentShield -= shieldDrainPerSecond * Time.deltaTime;
 
         if (currentShield <= 0f)
-        {
             BreakShield();
-        }
     }
 
     void HandleShieldRegen()
@@ -156,39 +160,38 @@ public class PlayerCombat : MonoBehaviour
         Die();
     }
 
-
     public void TakeDamage(float damage, Vector2 sourcePosition)
     {
         if (invincible || IsDead) return;
 
         float remainingDamage = damage;
+        bool shieldAbsorbedHit = false;
 
-        // ---------- SHIELD ----------
+        /* ---------- SHIELD ---------- */
         if (shieldActive && currentShield > 0f)
         {
             float shieldDamage = damage * shieldDamageMultiplier;
             currentShield -= shieldDamage;
 
+            shieldAbsorbedHit = true;
+
             if (currentShield <= 0f)
             {
-                // Convert negative shield back to raw damage to apply to health
                 remainingDamage = Mathf.Abs(currentShield) / shieldDamageMultiplier;
                 BreakShield();
             }
             else
             {
                 remainingDamage = 0f;
-                // Optional: Play a "shield hit" sound here
             }
         }
 
-        // ---------- HEALTH ----------
+        /* ---------- HEALTH ---------- */
         if (remainingDamage > 0f)
         {
             currentHealth -= remainingDamage;
             currentHealth = Mathf.Max(currentHealth, 0f);
 
-            // Play Random Hurt Sound with Pitch Shift
             PlayHurtSound();
 
             if (currentHealth <= 0f)
@@ -196,6 +199,10 @@ public class PlayerCombat : MonoBehaviour
                 Die();
                 return;
             }
+
+            // ✅ Apply knockback ONLY if shield did NOT absorb the hit
+            if (!shieldAbsorbedHit)
+                ApplyKnockback(sourcePosition);
 
             IsTakingDamage = true;
             damageFlash?.StartFlash(invincibilityDuration);
@@ -206,45 +213,52 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
+    /* ===================== KNOCKBACK ===================== */
+
+    void ApplyKnockback(Vector2 sourcePosition)
+    {
+        // Cancel dash only when knockback happens
+        if (movement != null)
+            movement.SendMessage("EndDash", SendMessageOptions.DontRequireReceiver);
+
+        float dir = Mathf.Sign(transform.position.x - sourcePosition.x);
+        if (dir == 0f) dir = 1f;
+
+        rb.linearVelocity = Vector2.zero;
+        rb.AddForce(new Vector2(dir * knockbackForceX, 0f), ForceMode2D.Impulse);
+
+        isKnockedBack = true;
+        knockbackTimer = knockbackDisableTime;
+    }
+
     /* ===================== DEATH ===================== */
 
-   void Die()
+    void Die()
     {
         if (IsDead) return;
 
         IsDead = true;
-
         shieldActive = false;
         StopAllCoroutines();
 
         rb.linearVelocity = Vector2.zero;
         rb.simulated = false;
 
-        // Play death animation (already handled by Animator)
-        
-        // Scene-specific behavior
         string currentScene = SceneManager.GetActiveScene().name;
 
         if (currentScene == "BossArena")
         {
-            // After death animation, load Level 1
             StartCoroutine(LoadLevelAfterDeath("SceneBetwee Boss Arena To Level1"));
         }
     }
 
     IEnumerator LoadLevelAfterDeath(string sceneName)
     {
-        // Let death animation play (adjust to clip length)
         yield return new WaitForSeconds(1.2f);
-
         SceneManager.LoadScene(sceneName);
     }
 
-
-
-
-
-   public void ResetPlayerState()
+    public void ResetPlayerState()
     {
         currentHealth = maxHealth;
         currentShield = maxShield;
@@ -254,18 +268,8 @@ public class PlayerCombat : MonoBehaviour
 
         shieldActive = false;
         invincible = false;
+        isKnockedBack = false;
     }
-
-
-
-    // Animation Event
-   public void OnDeathAnimationComplete()
-    {
-        PlayerRespawn respawn = GetComponent<PlayerRespawn>();
-        if (respawn != null)
-            respawn.Respawn();
-    }
-
 
     /* ===================== ROUTINES ===================== */
 
@@ -282,13 +286,13 @@ public class PlayerCombat : MonoBehaviour
         invincible = false;
     }
 
-    private void PlayHurtSound()
+    void PlayHurtSound()
     {
         if (audioSource != null && hurtSounds.Length > 0)
         {
             audioSource.pitch = Random.Range(1f - pitchVariation, 1f + pitchVariation);
             audioSource.PlayOneShot(hurtSounds[Random.Range(0, hurtSounds.Length)]);
-            audioSource.pitch = 1f; // Reset pitch
+            audioSource.pitch = 1f;
         }
     }
 }
